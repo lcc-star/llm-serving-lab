@@ -1,0 +1,32 @@
+{
+  "graph_max_bs": 8,
+  "overlap": false,
+  "cache": "naive",
+  "requests": 1,
+  "input_tokens_per_request": 128,
+  "output_tokens_per_request": 128,
+  "torch": "2.9.1+cu128",
+  "gpu": "NVIDIA A800 80GB PCIe",
+  "runs": [
+    {
+      "seconds": 1.440426838118583,
+      "output_tokens": 128,
+      "tokens_per_second": 88.86254866452468,
+      "output_sha256": "934ae8e8a242cae2656e16ea8ca5dac482ecf9d7dda1b593130192edb76706e2"
+    },
+    {
+      "seconds": 1.4378479230217636,
+      "output_tokens": 128,
+      "tokens_per_second": 89.02193197942434,
+      "output_sha256": "934ae8e8a242cae2656e16ea8ca5dac482ecf9d7dda1b593130192edb76706e2"
+    },
+    {
+      "seconds": 1.4353694450110197,
+      "output_tokens": 128,
+      "tokens_per_second": 89.17564773647338,
+      "output_sha256": "934ae8e8a242cae2656e16ea8ca5dac482ecf9d7dda1b593130192edb76706e2"
+    }
+  ],
+  "median_seconds": 1.4378479230217636,
+  "median_tokens_per_second": 89.02193197942434
+}
