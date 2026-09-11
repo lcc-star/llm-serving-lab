@@ -113,10 +113,14 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--repeats', type=int, default=5)
     parser.add_argument('--workload', type=Path)
+    parser.add_argument('--scenario', choices=['simultaneous', 'timed'], default='simultaneous')
     args = parser.parse_args()
     assert args.repeats > 0
     args.output.mkdir(parents=True, exist_ok=True)
     rows = json.loads(args.workload.read_text()) if args.workload else make_rows()
+    if not args.workload and args.scenario == 'simultaneous':
+        for row in rows:
+            row['arrival'] = 0.0
     assert rows and len({r['uid'] for r in rows}) == len(rows)
     assert all(0 <= r['arrival'] <= 30 and r['max_tokens'] > 0 and r['input_ids'] and
                len(r['input_ids']) + r['max_tokens'] <= 1024 for r in rows)
@@ -138,12 +142,15 @@ def main():
                     with (args.output/f'events_{repetition}.jsonl').open('w') as f:
                         for e in llm.events:
                             f.write(json.dumps(e)+'\n')
+                (args.output/f'outputs_{repetition}_{int(trace)}.json').write_text(json.dumps(llm.outputs)+'\n')
                 runs.append(record)
                 print(json.dumps({k:v for k,v in record.items() if k != 'metrics'}), flush=True)
-        assert len({r['sha256'] for r in runs}) == 1, 'Output mismatch across runs'
+        outputs_match = len({r['sha256'] for r in runs}) == 1
+        if not args.workload and args.scenario == 'simultaneous':
+            assert outputs_match, 'Output mismatch in fixed-arrival control'
         medians = {str(trace): statistics.median(r['seconds'] for r in runs if r['trace']==trace)
                    for trace in (False, True)}
-        result = dict(runs=runs, median_seconds=medians,
+        result = dict(scenario=args.scenario, outputs_match=outputs_match, runs=runs, median_seconds=medians,
                       instrumentation_overhead_percent=(medians['True']/medians['False']-1)*100,
                       source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
                       source_dirty=bool(subprocess.check_output(['git','status','--porcelain'],text=True)),
