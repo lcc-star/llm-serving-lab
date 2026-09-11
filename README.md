@@ -7,7 +7,10 @@
 ## 当前内容
 
 - `python/minisgl/`：继承的推理引擎，模块名称保持 `minisgl`。
-- `study/`：CUDA Graph、重叠调度和 TP 对照脚本及原始结果。
+- `study/stage00_baselines/`：CUDA Graph、重叠调度和 TP 基线。
+- `study/stage01_measurement/`：测量工具和输出差异调查。
+- `study/stage02_prefill_interference/`：长 prefill 干扰 decode 的预算对照。
+- [实验阶段索引](study/README.md)：各阶段入口。
 - `tests/`：上游测试。
 - `docs/experiment-plan.md`：调度优化计划。
 

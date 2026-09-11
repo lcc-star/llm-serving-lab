@@ -7,6 +7,7 @@
 ```bash
 export PYTHONPATH="$PWD/python"
 CUDA_VISIBLE_DEVICES=0 python study/stage02_prefill_interference/run.py --model /path/to/model --output study/stage02_prefill_interference/runs/main
+python study/stage02_prefill_interference/summarize.py study/stage02_prefill_interference/runs/main
 python -m unittest discover -s tests/stage02 -v
 ```
 

@@ -8,7 +8,7 @@ Activate an environment with the project dependencies, then run from repository 
 
 ```bash
 export PYTHONPATH="$PWD/python"
-python -m unittest discover -s tests/measurement -v
+python -m unittest discover -s tests/stage01_measurement -v
 CUDA_VISIBLE_DEVICES=0 python study/stage01_measurement/replay.py \
   --model /path/to/Meta-Llama-3.1-8B-Instruct \
   --output study/stage01_measurement/runs/example
