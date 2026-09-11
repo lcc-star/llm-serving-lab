@@ -66,6 +66,14 @@ def parse_args(args: List[str], run_shell: bool = False) -> Tuple[ServerArgs, bo
     from minisgl.moe import SUPPORTED_MOE_BACKENDS
 
     parser = argparse.ArgumentParser(description="MiniSGL Server Arguments")
+    from minisgl.scheduler.policy import SUPPORTED_POLICIES
+
+    parser.add_argument(
+        "--scheduling-policy",
+        choices=SUPPORTED_POLICIES,
+        default=ServerArgs.scheduling_policy,
+        help="Batch phase order: prefill first (default), decode first, or alternating.",
+    )
 
     parser.add_argument(
         "--model-path",

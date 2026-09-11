@@ -20,6 +20,7 @@ from .config import SchedulerConfig
 from .decode import DecodeManager
 from .io import SchedulerIOMixin
 from .prefill import ChunkedReq, PrefillManager
+from .policy import BatchPolicy
 from .table import TableManager
 
 if TYPE_CHECKING:
@@ -46,6 +47,7 @@ class Scheduler(SchedulerIOMixin):
     def __init__(self, config: SchedulerConfig):
         from minisgl.engine import Engine
 
+        self.batch_policy = BatchPolicy(config.scheduling_policy)
         self.engine = Engine(config)
 
         # use another stream to overlap metadata processing with computation
@@ -217,10 +219,8 @@ class Scheduler(SchedulerIOMixin):
         )
 
     def _schedule_next_batch(self) -> ForwardInput | None:
-        # TODO: support other policies: e.g. DECODE first
-        batch = (
-            self.prefill_manager.schedule_next_batch(self.prefill_budget)
-            or self.decode_manager.schedule_next_batch()
+        batch = self.batch_policy.select(
+            self.prefill_manager, self.decode_manager, self.prefill_budget
         )
         return self._prepare_batch(batch) if batch else None
 
