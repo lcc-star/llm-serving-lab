@@ -1,35 +1,74 @@
-# Stage 1 measurement prototype — 2026-09-11
+# 第一阶段：测量工具原型实验报告
 
-Implementation tested at commit `528ba47` (recorded in each summary). Engine scheduling policy is unchanged. Python modules were loaded from this new repository using explicit `PYTHONPATH`, with dependencies reused from the existing virtual environment.
+实验日期：2026-09-11。
 
-## Delivered
+本次实测代码版本为提交 `528ba47`，各组汇总文件中也记录了该版本。实验没有改变引擎调度策略。通过显式设置 `PYTHONPATH` 加载新仓库中的 Python 模块，依赖复用已有虚拟环境。
 
-- Fixed intended-arrival replay at the scheduler boundary, plus observed ingress lag.
-- CPU request, batch and per-token event recording; buffered JSONL export.
-- TTFT, pooled ITL, E2E, arrival-to-first-schedule, throughput and completion metrics.
-- Per-batch phase, token/request count, pending/running count and KV page accounting.
-- Independent analysis and standalone SVG timeline.
-- Unit tests and real GPU completion/output/resource checks.
+## 已完成的功能
 
-## Experiment
+- 在调度器接收请求的位置，按固定的预定到达时间回放请求，并记录实际接收滞后。
+- 记录 CPU 侧的请求、批次及逐 token 事件，在内存中缓冲，计时结束后导出 JSONL。
+- 统计首 token 延迟（TTFT）、汇总所有请求的相邻 token 间隔（ITL）、端到端延迟（E2E）、到达到首次调度的时间、吞吐量和请求完成情况。
+- 记录每轮调度阶段、token 数、请求数、等待和运行请求数，以及 KV 页占用情况。
+- 提供独立指标分析工具和可单独查看的 SVG 时间线。
+- 完成单元测试，以及真实 GPU 上的请求完成、输出数量和资源回收检查。
 
-A800 single GPU; Llama-3.1-8B-Instruct BF16; CUDA Graph enabled; overlap disabled; naive cache; 8192 one-token KV pages; 256 prefill token budget. Eight requests: four 128-token inputs and four 512-token inputs, all generating exactly 64 tokens with ignore_eos. No HTTP or tokenizer latency is measured. Each scenario has one excluded warmup and five traced/five untraced trials in alternating order.
+## 实验配置与记录开销
 
-| Control (all arrivals at zero) | Median replay seconds |
+| 配置项 | 设置 |
+|---|---|
+| 硬件 | 单张 A800 |
+| 模型与精度 | Llama-3.1-8B-Instruct，BF16 |
+| CUDA Graph | 开启 |
+| 重叠调度 | 关闭，使用普通调度 |
+| 缓存策略 | naive，不复用前缀 |
+| KV 容量 | 8192 页，每页容纳一个 token 的 K/V |
+| 每轮 prefill 预算 | 256 token |
+| 请求组成 | 4 个输入长度为 128 token 的请求，4 个输入长度为 512 token 的请求 |
+| 输出设置 | 每个请求固定生成 64 token，忽略 EOS |
+| 重复方式 | 每个场景预热一次，不计入结果；记录开启和关闭各测五次，交替执行 |
+
+本次不测量 HTTP 或 tokenizer 延迟。
+
+控制组中，所有请求的预定到达时间均为零：
+
+| 事件记录 | 回放耗时中位数（秒） |
 |---|---:|
-| Event recording off | 0.999251885 |
-| Event recording on | 1.000010542 |
+| 关闭 | 0.999251885 |
+| 开启 | 1.000010542 |
 
-Incremental event-recording overhead: **0.0759%** in this small experiment. This is below a level where we claim a precise general overhead estimate. Both modes retain token collection and correctness checks; file serialization is excluded. All ten runs produced 512 tokens and identical output hashes. Request-table recovery and cache integrity checks passed.
+本次小规模实验测得，额外事件记录开销为 **0.0759%**。差异很小，不能据此给出适用于其他负载的精确开销估计。两种模式都保留了输出 token 收集和正确性检查，文件序列化不计入耗时，因此这里衡量的是额外事件记录的开销，而不是整个测量框架相对于原始服务的开销。
 
-## Timed-arrival diagnostics
+十次测量均产生 512 个输出 token，输出哈希全部一致。请求表位置回收和缓存完整性检查通过。
 
-Four requests arrive at zero, followed by four at 0.15/0.18/0.21/0.24 seconds. All ten runs completed all eight requests and 512 tokens with resource checks passing. Outputs were not identical across all runs; raw output IDs and first-divergence locations are preserved in `evidence/timed/output_differences.json`. Variable batch composition is a hypothesis, not an established explanation. This remains a correctness investigation before treating timed replay as an output-equivalence benchmark.
+## 延迟到达场景诊断
 
-Representative recorded run 0 (not aggregate across repetitions): TTFT P50 47.35 ms; ITL P50 11.83 ms; maximum observed ITL 216.57 ms; maximum ingress lag 19.10 ms. Tail metrics are descriptive only for this small workload. The timeline marks CPU events, not GPU kernel durations. These numbers validate visibility into pauses, not a scheduling optimization.
+前四个请求在零时刻到达，后四个分别在 0.15、0.18、0.21、0.24 秒到达。十次测量均完成全部八个请求，产生 512 个输出 token，资源检查均通过。
 
-## Validation and remaining scope
+**不同次运行的输出并非全部一致。** 原始输出 token ID 已保存，首个差异位置记录在 [输出差异文件](evidence/timed/output_differences.json) 中。批次组成变化是一个待验证的解释，并不是已经确定的原因。在将动态回放用于输出等价性验证之前，需要继续调查这个问题。
 
-Four standard-library unit tests passed: known timeline, empty/incomplete results, reversed timestamps, single-token/no-ITL and duplicate completion. JSONL reanalysis completed and SVGs parsed as XML. GPU memory was released after experiments.
+以下为开启记录的第 0 次测量结果，属于单次代表性记录，不是多次测量的汇总：
 
-This prototype is single-GPU, normal scheduling, fixed-length synthetic token replay. It does not yet measure HTTP client latency, GPU event duration, cancellation or natural EOS. Timed-arrival output differences remain unresolved. P99 claims require larger samples. Those boundaries must be addressed explicitly in subsequent online/correctness work; no stage-2 scheduling change has been made.
+| 指标 | 数值 |
+|---|---:|
+| TTFT P50 | 47.35 毫秒 |
+| ITL P50 | 11.83 毫秒 |
+| 最大观测 ITL | 216.57 毫秒 |
+| 最大请求接收滞后 | 19.10 毫秒 |
+
+当前负载规模较小，尾延迟指标仅作描述。时间线标记的是 CPU 事件，而不是 GPU kernel 的执行时长。这些结果证明工具能够观察到输出停顿，**并不表示已经完成调度优化**。
+
+可查看 [动态到达时间线](evidence/timed/analysis/timeline.svg) 和 [固定到达控制组时间线](evidence/control/analysis/timeline.svg)。
+
+## 验证结果与后续范围
+
+四项基于 Python 标准库的单元测试通过，覆盖已知时间线、空结果与未完成请求、时间戳逆序，以及单 token 无 ITL 和重复完成事件。JSONL 已通过独立工具重新分析，SVG 已通过 XML 解析检查。实验结束后 GPU 显存已释放。
+
+当前原型仅覆盖单卡、普通调度和固定输出长度的合成 token 回放，尚未覆盖：
+
+- HTTP 客户端延迟与 GPU 事件耗时。
+- 请求取消和正常遇到 EOS 后结束的场景。
+- 延迟到达场景中输出差异的原因定位。
+- 足以支持可靠 P99 结论的大规模样本评估。
+
+这些边界需要在后续在线测量和正确性验证中明确处理。本阶段尚未修改第二阶段涉及的调度策略。
