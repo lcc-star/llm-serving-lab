@@ -1,0 +1,593 @@
+{"event": "request", "uid": 0, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 128, "max_tokens": 64}
+{"event": "request", "uid": 1, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 128, "max_tokens": 64}
+{"event": "request", "uid": 2, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 128, "max_tokens": 64}
+{"event": "request", "uid": 3, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 128, "max_tokens": 64}
+{"event": "request", "uid": 4, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 512, "max_tokens": 64}
+{"event": "request", "uid": 5, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 512, "max_tokens": 64}
+{"event": "request", "uid": 6, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 512, "max_tokens": 64}
+{"event": "request", "uid": 7, "arrival": 0.0, "received": 5.171867087483406e-05, "input_tokens": 512, "max_tokens": 64}
+{"event": "batch", "t": 0.0005187639035284519, "phase": "prefill", "uids": [0, 1], "requests": 2, "input_tokens": 256, "pending": 6, "decode_running": 0, "kv_free_pages": 7936, "kv_allocated_pages": 256}
+{"event": "token", "t": 0.022461076732724905, "uid": 0, "token_id": 88, "finished": false, "reason": null}
+{"event": "token", "t": 0.022461076732724905, "uid": 1, "token_id": 319, "finished": false, "reason": null}
+{"event": "batch", "t": 0.022831100039184093, "phase": "prefill", "uids": [2, 3], "requests": 2, "input_tokens": 256, "pending": 4, "decode_running": 2, "kv_free_pages": 7680, "kv_allocated_pages": 512}
+{"event": "token", "t": 0.04583200765773654, "uid": 2, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.04583200765773654, "uid": 3, "token_id": 198, "finished": false, "reason": null}
+{"event": "batch", "t": 0.04616106767207384, "phase": "prefill", "uids": [4], "requests": 1, "input_tokens": 256, "pending": 4, "decode_running": 4, "kv_free_pages": 7424, "kv_allocated_pages": 768}
+{"event": "batch", "t": 0.07196629699319601, "phase": "prefill", "uids": [4], "requests": 1, "input_tokens": 256, "pending": 3, "decode_running": 4, "kv_free_pages": 7168, "kv_allocated_pages": 1024}
+{"event": "token", "t": 0.09781810594722629, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "batch", "t": 0.09814625978469849, "phase": "prefill", "uids": [5], "requests": 1, "input_tokens": 256, "pending": 3, "decode_running": 5, "kv_free_pages": 6912, "kv_allocated_pages": 1280}
+{"event": "batch", "t": 0.12401334661990404, "phase": "prefill", "uids": [5], "requests": 1, "input_tokens": 256, "pending": 2, "decode_running": 5, "kv_free_pages": 6656, "kv_allocated_pages": 1536}
+{"event": "token", "t": 0.1498384759761393, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "batch", "t": 0.15016825776547194, "phase": "prefill", "uids": [6], "requests": 1, "input_tokens": 256, "pending": 2, "decode_running": 6, "kv_free_pages": 6400, "kv_allocated_pages": 1792}
+{"event": "batch", "t": 0.17600849689915776, "phase": "prefill", "uids": [6], "requests": 1, "input_tokens": 256, "pending": 1, "decode_running": 6, "kv_free_pages": 6144, "kv_allocated_pages": 2048}
+{"event": "token", "t": 0.20182992983609438, "uid": 6, "token_id": 319, "finished": false, "reason": null}
+{"event": "batch", "t": 0.2021544249728322, "phase": "prefill", "uids": [7], "requests": 1, "input_tokens": 256, "pending": 1, "decode_running": 7, "kv_free_pages": 5888, "kv_allocated_pages": 2304}
+{"event": "batch", "t": 0.2280263458378613, "phase": "prefill", "uids": [7], "requests": 1, "input_tokens": 256, "pending": 0, "decode_running": 7, "kv_free_pages": 5632, "kv_allocated_pages": 2560}
+{"event": "token", "t": 0.25384921580553055, "uid": 7, "token_id": 62, "finished": false, "reason": null}
+{"event": "batch", "t": 0.25420666905120015, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5624, "kv_allocated_pages": 2568}
+{"event": "token", "t": 0.26609638007357717, "uid": 0, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.26609638007357717, "uid": 1, "token_id": 27, "finished": false, "reason": null}
+{"event": "token", "t": 0.26609638007357717, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.26609638007357717, "uid": 3, "token_id": 567, "finished": false, "reason": null}
+{"event": "token", "t": 0.26609638007357717, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.26609638007357717, "uid": 5, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.26609638007357717, "uid": 6, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.26609638007357717, "uid": 7, "token_id": 83, "finished": false, "reason": null}
+{"event": "batch", "t": 0.26643716264516115, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5616, "kv_allocated_pages": 2576}
+{"event": "token", "t": 0.2783488780260086, "uid": 0, "token_id": 2, "finished": false, "reason": null}
+{"event": "token", "t": 0.2783488780260086, "uid": 1, "token_id": 91, "finished": false, "reason": null}
+{"event": "token", "t": 0.2783488780260086, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.2783488780260086, "uid": 3, "token_id": 15166, "finished": false, "reason": null}
+{"event": "token", "t": 0.2783488780260086, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.2783488780260086, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.2783488780260086, "uid": 6, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.2783488780260086, "uid": 7, "token_id": 319, "finished": false, "reason": null}
+{"event": "batch", "t": 0.27866787975654006, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5608, "kv_allocated_pages": 2584}
+{"event": "token", "t": 0.2904225066304207, "uid": 0, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.2904225066304207, "uid": 1, "token_id": 52202, "finished": false, "reason": null}
+{"event": "token", "t": 0.2904225066304207, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.2904225066304207, "uid": 3, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.2904225066304207, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.2904225066304207, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.2904225066304207, "uid": 6, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.2904225066304207, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.29073244193568826, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5600, "kv_allocated_pages": 2592}
+{"event": "token", "t": 0.3023996506817639, "uid": 0, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.3023996506817639, "uid": 1, "token_id": 42729, "finished": false, "reason": null}
+{"event": "token", "t": 0.3023996506817639, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.3023996506817639, "uid": 3, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.3023996506817639, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.3023996506817639, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.3023996506817639, "uid": 6, "token_id": 2564, "finished": false, "reason": null}
+{"event": "token", "t": 0.3023996506817639, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.30270571168512106, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5592, "kv_allocated_pages": 2600}
+{"event": "token", "t": 0.3143142629414797, "uid": 0, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.3143142629414797, "uid": 1, "token_id": 6594, "finished": false, "reason": null}
+{"event": "token", "t": 0.3143142629414797, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.3143142629414797, "uid": 3, "token_id": 25, "finished": false, "reason": null}
+{"event": "token", "t": 0.3143142629414797, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.3143142629414797, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.3143142629414797, "uid": 6, "token_id": 60856, "finished": false, "reason": null}
+{"event": "token", "t": 0.3143142629414797, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.3146232678554952, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5584, "kv_allocated_pages": 2608}
+{"event": "token", "t": 0.3262337949126959, "uid": 0, "token_id": 29438, "finished": false, "reason": null}
+{"event": "token", "t": 0.3262337949126959, "uid": 1, "token_id": 62, "finished": false, "reason": null}
+{"event": "token", "t": 0.3262337949126959, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.3262337949126959, "uid": 3, "token_id": 71994, "finished": false, "reason": null}
+{"event": "token", "t": 0.3262337949126959, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.3262337949126959, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.3262337949126959, "uid": 6, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.3262337949126959, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.32654980290681124, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5576, "kv_allocated_pages": 2616}
+{"event": "token", "t": 0.33814946096390486, "uid": 0, "token_id": 198, "finished": false, "reason": null}
+{"event": "token", "t": 0.33814946096390486, "uid": 1, "token_id": 6393, "finished": false, "reason": null}
+{"event": "token", "t": 0.33814946096390486, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.33814946096390486, "uid": 3, "token_id": 279, "finished": false, "reason": null}
+{"event": "token", "t": 0.33814946096390486, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.33814946096390486, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.33814946096390486, "uid": 6, "token_id": 128010, "finished": false, "reason": null}
+{"event": "token", "t": 0.33814946096390486, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.33846015576273203, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5568, "kv_allocated_pages": 2624}
+{"event": "token", "t": 0.35003416892141104, "uid": 0, "token_id": 791, "finished": false, "reason": null}
+{"event": "token", "t": 0.35003416892141104, "uid": 1, "token_id": 91, "finished": false, "reason": null}
+{"event": "token", "t": 0.35003416892141104, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.35003416892141104, "uid": 3, "token_id": 3575, "finished": false, "reason": null}
+{"event": "token", "t": 0.35003416892141104, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.35003416892141104, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.35003416892141104, "uid": 6, "token_id": 40, "finished": false, "reason": null}
+{"event": "token", "t": 0.35003416892141104, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.3503468297421932, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5560, "kv_allocated_pages": 2632}
+{"event": "token", "t": 0.3618682390078902, "uid": 0, "token_id": 3575, "finished": false, "reason": null}
+{"event": "token", "t": 0.3618682390078902, "uid": 1, "token_id": 29, "finished": false, "reason": null}
+{"event": "token", "t": 0.3618682390078902, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.3618682390078902, "uid": 3, "token_id": 198, "finished": false, "reason": null}
+{"event": "token", "t": 0.3618682390078902, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.3618682390078902, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.3618682390078902, "uid": 6, "token_id": 649, "finished": false, "reason": null}
+{"event": "token", "t": 0.3618682390078902, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.362173686735332, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5552, "kv_allocated_pages": 2640}
+{"event": "token", "t": 0.37371343979611993, "uid": 0, "token_id": 374, "finished": false, "reason": null}
+{"event": "token", "t": 0.37371343979611993, "uid": 1, "token_id": 40, "finished": false, "reason": null}
+{"event": "token", "t": 0.37371343979611993, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.37371343979611993, "uid": 3, "token_id": 791, "finished": false, "reason": null}
+{"event": "token", "t": 0.37371343979611993, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.37371343979611993, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.37371343979611993, "uid": 6, "token_id": 956, "finished": false, "reason": null}
+{"event": "token", "t": 0.37371343979611993, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.3740133149549365, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5544, "kv_allocated_pages": 2648}
+{"event": "token", "t": 0.3855168940499425, "uid": 0, "token_id": 10371, "finished": false, "reason": null}
+{"event": "token", "t": 0.3855168940499425, "uid": 1, "token_id": 649, "finished": false, "reason": null}
+{"event": "token", "t": 0.3855168940499425, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.3855168940499425, "uid": 3, "token_id": 3575, "finished": false, "reason": null}
+{"event": "token", "t": 0.3855168940499425, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.3855168940499425, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.3855168940499425, "uid": 6, "token_id": 3493, "finished": false, "reason": null}
+{"event": "token", "t": 0.3855168940499425, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.38581350864842534, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5536, "kv_allocated_pages": 2656}
+{"event": "token", "t": 0.3973352247849107, "uid": 0, "token_id": 311, "finished": false, "reason": null}
+{"event": "token", "t": 0.3973352247849107, "uid": 1, "token_id": 1431, "finished": false, "reason": null}
+{"event": "token", "t": 0.3973352247849107, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.3973352247849107, "uid": 3, "token_id": 374, "finished": false, "reason": null}
+{"event": "token", "t": 0.3973352247849107, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.3973352247849107, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.3973352247849107, "uid": 6, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.3973352247849107, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.3976539457216859, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5528, "kv_allocated_pages": 2664}
+{"event": "token", "t": 0.40916835982352495, "uid": 0, "token_id": 1893, "finished": false, "reason": null}
+{"event": "token", "t": 0.40916835982352495, "uid": 1, "token_id": 1520, "finished": false, "reason": null}
+{"event": "token", "t": 0.40916835982352495, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.40916835982352495, "uid": 3, "token_id": 311, "finished": false, "reason": null}
+{"event": "token", "t": 0.40916835982352495, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.40916835982352495, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.40916835982352495, "uid": 6, "token_id": 4686, "finished": false, "reason": null}
+{"event": "token", "t": 0.40916835982352495, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.40947812097147107, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5520, "kv_allocated_pages": 2672}
+{"event": "token", "t": 0.4209950240328908, "uid": 0, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.4209950240328908, "uid": 1, "token_id": 449, "finished": false, "reason": null}
+{"event": "token", "t": 0.4209950240328908, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.4209950240328908, "uid": 3, "token_id": 1505, "finished": false, "reason": null}
+{"event": "token", "t": 0.4209950240328908, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.4209950240328908, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.4209950240328908, "uid": 6, "token_id": 2082, "finished": false, "reason": null}
+{"event": "token", "t": 0.4209950240328908, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.4213017518632114, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5512, "kv_allocated_pages": 2680}
+{"event": "token", "t": 0.4328029346652329, "uid": 0, "token_id": 2777, "finished": false, "reason": null}
+{"event": "token", "t": 0.4328029346652329, "uid": 1, "token_id": 430, "finished": false, "reason": null}
+{"event": "token", "t": 0.4328029346652329, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.4328029346652329, "uid": 3, "token_id": 279, "finished": false, "reason": null}
+{"event": "token", "t": 0.4328029346652329, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.4328029346652329, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.4328029346652329, "uid": 6, "token_id": 44165, "finished": false, "reason": null}
+{"event": "token", "t": 0.4328029346652329, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.433098912704736, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5504, "kv_allocated_pages": 2688}
+{"event": "token", "t": 0.4446116457693279, "uid": 0, "token_id": 7645, "finished": false, "reason": null}
+{"event": "token", "t": 0.4446116457693279, "uid": 1, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.4446116457693279, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.4446116457693279, "uid": 3, "token_id": 7340, "finished": false, "reason": null}
+{"event": "token", "t": 0.4446116457693279, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.4446116457693279, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.4446116457693279, "uid": 6, "token_id": 439, "finished": false, "reason": null}
+{"event": "token", "t": 0.4446116457693279, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.4449273366481066, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5496, "kv_allocated_pages": 2696}
+{"event": "token", "t": 0.4563987017609179, "uid": 0, "token_id": 430, "finished": false, "reason": null}
+{"event": "token", "t": 0.4563987017609179, "uid": 1, "token_id": 1442, "finished": false, "reason": null}
+{"event": "token", "t": 0.4563987017609179, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.4563987017609179, "uid": 3, "token_id": 907, "finished": false, "reason": null}
+{"event": "token", "t": 0.4563987017609179, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.4563987017609179, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.4563987017609179, "uid": 6, "token_id": 279, "finished": false, "reason": null}
+{"event": "token", "t": 0.4563987017609179, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.4567053010687232, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5488, "kv_allocated_pages": 2704}
+{"event": "token", "t": 0.46824732795357704, "uid": 0, "token_id": 11105, "finished": false, "reason": null}
+{"event": "token", "t": 0.46824732795357704, "uid": 1, "token_id": 499, "finished": false, "reason": null}
+{"event": "token", "t": 0.46824732795357704, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.46824732795357704, "uid": 3, "token_id": 315, "finished": false, "reason": null}
+{"event": "token", "t": 0.46824732795357704, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.46824732795357704, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.46824732795357704, "uid": 6, "token_id": 3984, "finished": false, "reason": null}
+{"event": "token", "t": 0.46824732795357704, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.46855392772704363, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5480, "kv_allocated_pages": 2712}
+{"event": "token", "t": 0.48007244896143675, "uid": 0, "token_id": 279, "finished": false, "reason": null}
+{"event": "token", "t": 0.48007244896143675, "uid": 1, "token_id": 617, "finished": false, "reason": null}
+{"event": "token", "t": 0.48007244896143675, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.48007244896143675, "uid": 3, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.48007244896143675, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.48007244896143675, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.48007244896143675, "uid": 6, "token_id": 1495, "finished": false, "reason": null}
+{"event": "token", "t": 0.48007244896143675, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.48037351481616497, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5472, "kv_allocated_pages": 2720}
+{"event": "token", "t": 0.4919069688767195, "uid": 0, "token_id": 3044, "finished": false, "reason": null}
+{"event": "token", "t": 0.4919069688767195, "uid": 1, "token_id": 904, "finished": false, "reason": null}
+{"event": "token", "t": 0.4919069688767195, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.4919069688767195, "uid": 3, "token_id": 734, "finished": false, "reason": null}
+{"event": "token", "t": 0.4919069688767195, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.4919069688767195, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.4919069688767195, "uid": 6, "token_id": 374, "finished": false, "reason": null}
+{"event": "token", "t": 0.4919069688767195, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.4922223147004843, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5464, "kv_allocated_pages": 2728}
+{"event": "token", "t": 0.5037470408715308, "uid": 0, "token_id": 369, "finished": false, "reason": null}
+{"event": "token", "t": 0.5037470408715308, "uid": 1, "token_id": 1023, "finished": false, "reason": null}
+{"event": "token", "t": 0.5037470408715308, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.5037470408715308, "uid": 3, "token_id": 282, "finished": false, "reason": null}
+{"event": "token", "t": 0.5037470408715308, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.5037470408715308, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.5037470408715308, "uid": 6, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.5037470408715308, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5040509500540793, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5456, "kv_allocated_pages": 2736}
+{"event": "token", "t": 0.5155531270429492, "uid": 0, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.5155531270429492, "uid": 1, "token_id": 4860, "finished": false, "reason": null}
+{"event": "token", "t": 0.5155531270429492, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.5155531270429492, "uid": 3, "token_id": 2120, "finished": false, "reason": null}
+{"event": "token", "t": 0.5155531270429492, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.5155531270429492, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.5155531270429492, "uid": 6, "token_id": 6651, "finished": false, "reason": null}
+{"event": "token", "t": 0.5155531270429492, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5158517579548061, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5448, "kv_allocated_pages": 2744}
+{"event": "token", "t": 0.5272957696579397, "uid": 0, "token_id": 1841, "finished": false, "reason": null}
+{"event": "token", "t": 0.5272957696579397, "uid": 1, "token_id": 477, "finished": false, "reason": null}
+{"event": "token", "t": 0.5272957696579397, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.5272957696579397, "uid": 3, "token_id": 8, "finished": false, "reason": null}
+{"event": "token", "t": 0.5272957696579397, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.5272957696579397, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.5272957696579397, "uid": 6, "token_id": 315, "finished": false, "reason": null}
+{"event": "token", "t": 0.5272957696579397, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5275996159762144, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5440, "kv_allocated_pages": 2752}
+{"event": "token", "t": 0.5391258229501545, "uid": 0, "token_id": 311, "finished": false, "reason": null}
+{"event": "token", "t": 0.5391258229501545, "uid": 1, "token_id": 1205, "finished": false, "reason": null}
+{"event": "token", "t": 0.5391258229501545, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.5391258229501545, "uid": 3, "token_id": 284, "finished": false, "reason": null}
+{"event": "token", "t": 0.5391258229501545, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.5391258229501545, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.5391258229501545, "uid": 6, "token_id": 2082, "finished": false, "reason": null}
+{"event": "token", "t": 0.5391258229501545, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5394355417229235, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5432, "kv_allocated_pages": 2760}
+{"event": "token", "t": 0.550968499854207, "uid": 0, "token_id": 387, "finished": false, "reason": null}
+{"event": "token", "t": 0.550968499854207, "uid": 1, "token_id": 13291, "finished": false, "reason": null}
+{"event": "token", "t": 0.550968499854207, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.550968499854207, "uid": 3, "token_id": 865, "finished": false, "reason": null}
+{"event": "token", "t": 0.550968499854207, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.550968499854207, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.550968499854207, "uid": 6, "token_id": 323, "finished": false, "reason": null}
+{"event": "token", "t": 0.550968499854207, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5512657547369599, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5424, "kv_allocated_pages": 2768}
+{"event": "token", "t": 0.5627868068404496, "uid": 0, "token_id": 304, "finished": false, "reason": null}
+{"event": "token", "t": 0.5627868068404496, "uid": 1, "token_id": 449, "finished": false, "reason": null}
+{"event": "token", "t": 0.5627868068404496, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.5627868068404496, "uid": 3, "token_id": 61, "finished": false, "reason": null}
+{"event": "token", "t": 0.5627868068404496, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.5627868068404496, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.5627868068404496, "uid": 6, "token_id": 5933, "finished": false, "reason": null}
+{"event": "token", "t": 0.5627868068404496, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5630836579948664, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5416, "kv_allocated_pages": 2776}
+{"event": "token", "t": 0.5745752798393369, "uid": 0, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.5745752798393369, "uid": 1, "token_id": 2555, "finished": false, "reason": null}
+{"event": "token", "t": 0.5745752798393369, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.5745752798393369, "uid": 3, "token_id": 17, "finished": false, "reason": null}
+{"event": "token", "t": 0.5745752798393369, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.5745752798393369, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.5745752798393369, "uid": 6, "token_id": 4221, "finished": false, "reason": null}
+{"event": "token", "t": 0.5745752798393369, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5748861320316792, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5408, "kv_allocated_pages": 2784}
+{"event": "token", "t": 0.5864116218872368, "uid": 0, "token_id": 3738, "finished": false, "reason": null}
+{"event": "token", "t": 0.5864116218872368, "uid": 1, "token_id": 775, "finished": false, "reason": null}
+{"event": "token", "t": 0.5864116218872368, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.5864116218872368, "uid": 3, "token_id": 489, "finished": false, "reason": null}
+{"event": "token", "t": 0.5864116218872368, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.5864116218872368, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.5864116218872368, "uid": 6, "token_id": 11, "finished": false, "reason": null}
+{"event": "token", "t": 0.5864116218872368, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5867152218706906, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5400, "kv_allocated_pages": 2792}
+{"event": "token", "t": 0.5982039486989379, "uid": 0, "token_id": 1614, "finished": false, "reason": null}
+{"event": "token", "t": 0.5982039486989379, "uid": 1, "token_id": 11, "finished": false, "reason": null}
+{"event": "token", "t": 0.5982039486989379, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.5982039486989379, "uid": 3, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.5982039486989379, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.5982039486989379, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.5982039486989379, "uid": 6, "token_id": 323, "finished": false, "reason": null}
+{"event": "token", "t": 0.5982039486989379, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.5985053088515997, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5392, "kv_allocated_pages": 2800}
+{"event": "token", "t": 0.6099607436917722, "uid": 0, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.6099607436917722, "uid": 1, "token_id": 2733, "finished": false, "reason": null}
+{"event": "token", "t": 0.6099607436917722, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.6099607436917722, "uid": 3, "token_id": 17, "finished": false, "reason": null}
+{"event": "token", "t": 0.6099607436917722, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.6099607436917722, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.6099607436917722, "uid": 6, "token_id": 433, "finished": false, "reason": null}
+{"event": "token", "t": 0.6099607436917722, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6102623888291419, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5384, "kv_allocated_pages": 2808}
+{"event": "token", "t": 0.6217838106676936, "uid": 0, "token_id": 578, "finished": false, "reason": null}
+{"event": "token", "t": 0.6217838106676936, "uid": 1, "token_id": 1949, "finished": false, "reason": null}
+{"event": "token", "t": 0.6217838106676936, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.6217838106676936, "uid": 3, "token_id": 87, "finished": false, "reason": null}
+{"event": "token", "t": 0.6217838106676936, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.6217838106676936, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.6217838106676936, "uid": 6, "token_id": 8111, "finished": false, "reason": null}
+{"event": "token", "t": 0.6217838106676936, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6220827498473227, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5376, "kv_allocated_pages": 2816}
+{"event": "token", "t": 0.6335596586577594, "uid": 0, "token_id": 1614, "finished": false, "reason": null}
+{"event": "token", "t": 0.6335596586577594, "uid": 1, "token_id": 311, "finished": false, "reason": null}
+{"event": "token", "t": 0.6335596586577594, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.6335596586577594, "uid": 3, "token_id": 489, "finished": false, "reason": null}
+{"event": "token", "t": 0.6335596586577594, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.6335596586577594, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.6335596586577594, "uid": 6, "token_id": 311, "finished": false, "reason": null}
+{"event": "token", "t": 0.6335596586577594, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6338574467226863, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5368, "kv_allocated_pages": 2824}
+{"event": "token", "t": 0.6453929338604212, "uid": 0, "token_id": 374, "finished": false, "reason": null}
+{"event": "token", "t": 0.6453929338604212, "uid": 1, "token_id": 2610, "finished": false, "reason": null}
+{"event": "token", "t": 0.6453929338604212, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.6453929338604212, "uid": 3, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.6453929338604212, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.6453929338604212, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.6453929338604212, "uid": 6, "token_id": 387, "finished": false, "reason": null}
+{"event": "token", "t": 0.6453929338604212, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6456884797662497, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5360, "kv_allocated_pages": 2832}
+{"event": "token", "t": 0.6571572269313037, "uid": 0, "token_id": 4613, "finished": false, "reason": null}
+{"event": "token", "t": 0.6571572269313037, "uid": 1, "token_id": 0, "finished": false, "reason": null}
+{"event": "token", "t": 0.6571572269313037, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.6571572269313037, "uid": 3, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.6571572269313037, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.6571572269313037, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.6571572269313037, "uid": 6, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.6571572269313037, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6574647487141192, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5352, "kv_allocated_pages": 2840}
+{"event": "token", "t": 0.6689480887725949, "uid": 0, "token_id": 555, "finished": false, "reason": null}
+{"event": "token", "t": 0.6689480887725949, "uid": 1, "token_id": 765, "finished": false, "reason": null}
+{"event": "token", "t": 0.6689480887725949, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.6689480887725949, "uid": 3, "token_id": 11, "finished": false, "reason": null}
+{"event": "token", "t": 0.6689480887725949, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.6689480887725949, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.6689480887725949, "uid": 6, "token_id": 503, "finished": false, "reason": null}
+{"event": "token", "t": 0.6689480887725949, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6692506559193134, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5344, "kv_allocated_pages": 2848}
+{"event": "token", "t": 0.6807467960752547, "uid": 0, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.6807467960752547, "uid": 1, "token_id": 92, "finished": false, "reason": null}
+{"event": "token", "t": 0.6807467960752547, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.6807467960752547, "uid": 3, "token_id": 1405, "finished": false, "reason": null}
+{"event": "token", "t": 0.6807467960752547, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.6807467960752547, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.6807467960752547, "uid": 6, "token_id": 26902, "finished": false, "reason": null}
+{"event": "token", "t": 0.6807467960752547, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6810443587601185, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5336, "kv_allocated_pages": 2856}
+{"event": "token", "t": 0.692586608696729, "uid": 0, "token_id": 743, "finished": false, "reason": null}
+{"event": "token", "t": 0.692586608696729, "uid": 1, "token_id": 81923, "finished": false, "reason": null}
+{"event": "token", "t": 0.692586608696729, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.692586608696729, "uid": 3, "token_id": 865, "finished": false, "reason": null}
+{"event": "token", "t": 0.692586608696729, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.692586608696729, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.692586608696729, "uid": 6, "token_id": 4526, "finished": false, "reason": null}
+{"event": "token", "t": 0.692586608696729, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.6928814137354493, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5328, "kv_allocated_pages": 2864}
+{"event": "token", "t": 0.7043597740121186, "uid": 0, "token_id": 315, "finished": false, "reason": null}
+{"event": "token", "t": 0.7043597740121186, "uid": 1, "token_id": 40, "finished": false, "reason": null}
+{"event": "token", "t": 0.7043597740121186, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7043597740121186, "uid": 3, "token_id": 374, "finished": false, "reason": null}
+{"event": "token", "t": 0.7043597740121186, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.7043597740121186, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.7043597740121186, "uid": 6, "token_id": 315, "finished": false, "reason": null}
+{"event": "token", "t": 0.7043597740121186, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.7046744907274842, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5320, "kv_allocated_pages": 2872}
+{"event": "token", "t": 0.7161612217314541, "uid": 0, "token_id": 4787, "finished": false, "reason": null}
+{"event": "token", "t": 0.7161612217314541, "uid": 1, "token_id": 649, "finished": false, "reason": null}
+{"event": "token", "t": 0.7161612217314541, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.7161612217314541, "uid": 3, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.7161612217314541, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.7161612217314541, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7161612217314541, "uid": 6, "token_id": 4339, "finished": false, "reason": null}
+{"event": "token", "t": 0.7161612217314541, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.7164714629761875, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5312, "kv_allocated_pages": 2880}
+{"event": "token", "t": 0.7279798807576299, "uid": 0, "token_id": 11, "finished": false, "reason": null}
+{"event": "token", "t": 0.7279798807576299, "uid": 1, "token_id": 1431, "finished": false, "reason": null}
+{"event": "token", "t": 0.7279798807576299, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7279798807576299, "uid": 3, "token_id": 1972, "finished": false, "reason": null}
+{"event": "token", "t": 0.7279798807576299, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.7279798807576299, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.7279798807576299, "uid": 6, "token_id": 323, "finished": false, "reason": null}
+{"event": "token", "t": 0.7279798807576299, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.7282789726741612, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5304, "kv_allocated_pages": 2888}
+{"event": "token", "t": 0.7397908880375326, "uid": 0, "token_id": 323, "finished": false, "reason": null}
+{"event": "token", "t": 0.7397908880375326, "uid": 1, "token_id": 3493, "finished": false, "reason": null}
+{"event": "token", "t": 0.7397908880375326, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.7397908880375326, "uid": 3, "token_id": 1396, "finished": false, "reason": null}
+{"event": "token", "t": 0.7397908880375326, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.7397908880375326, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.7397908880375326, "uid": 6, "token_id": 32847, "finished": false, "reason": null}
+{"event": "token", "t": 0.7397908880375326, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.7400938416831195, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5296, "kv_allocated_pages": 2896}
+{"event": "token", "t": 0.7515915767289698, "uid": 0, "token_id": 279, "finished": false, "reason": null}
+{"event": "token", "t": 0.7515915767289698, "uid": 1, "token_id": 2038, "finished": false, "reason": null}
+{"event": "token", "t": 0.7515915767289698, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7515915767289698, "uid": 3, "token_id": 382, "finished": false, "reason": null}
+{"event": "token", "t": 0.7515915767289698, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.7515915767289698, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.7515915767289698, "uid": 6, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7515915767289698, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.751911642961204, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5288, "kv_allocated_pages": 2904}
+{"event": "token", "t": 0.7634421256370842, "uid": 0, "token_id": 2777, "finished": false, "reason": null}
+{"event": "token", "t": 0.7634421256370842, "uid": 1, "token_id": 477, "finished": false, "reason": null}
+{"event": "token", "t": 0.7634421256370842, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.7634421256370842, "uid": 3, "token_id": 567, "finished": false, "reason": null}
+{"event": "token", "t": 0.7634421256370842, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.7634421256370842, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.7634421256370842, "uid": 6, "token_id": 4452, "finished": false, "reason": null}
+{"event": "token", "t": 0.7634421256370842, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.7637449069879949, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5280, "kv_allocated_pages": 2912}
+{"event": "token", "t": 0.7752604959532619, "uid": 0, "token_id": 7645, "finished": false, "reason": null}
+{"event": "token", "t": 0.7752604959532619, "uid": 1, "token_id": 19351, "finished": false, "reason": null}
+{"event": "token", "t": 0.7752604959532619, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7752604959532619, "uid": 3, "token_id": 15166, "finished": false, "reason": null}
+{"event": "token", "t": 0.7752604959532619, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.7752604959532619, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7752604959532619, "uid": 6, "token_id": 11, "finished": false, "reason": null}
+{"event": "token", "t": 0.7752604959532619, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.7755648689344525, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5272, "kv_allocated_pages": 2920}
+{"event": "token", "t": 0.7870349436998367, "uid": 0, "token_id": 1288, "finished": false, "reason": null}
+{"event": "token", "t": 0.7870349436998367, "uid": 1, "token_id": 389, "finished": false, "reason": null}
+{"event": "token", "t": 0.7870349436998367, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.7870349436998367, "uid": 3, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.7870349436998367, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.7870349436998367, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.7870349436998367, "uid": 6, "token_id": 358, "finished": false, "reason": null}
+{"event": "token", "t": 0.7870349436998367, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.7873337636701763, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5264, "kv_allocated_pages": 2928}
+{"event": "token", "t": 0.7988179088570178, "uid": 0, "token_id": 387, "finished": false, "reason": null}
+{"event": "token", "t": 0.7988179088570178, "uid": 1, "token_id": 12079, "finished": false, "reason": null}
+{"event": "token", "t": 0.7988179088570178, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.7988179088570178, "uid": 3, "token_id": 17, "finished": false, "reason": null}
+{"event": "token", "t": 0.7988179088570178, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.7988179088570178, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.7988179088570178, "uid": 6, "token_id": 649, "finished": false, "reason": null}
+{"event": "token", "t": 0.7988179088570178, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.799120910000056, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5256, "kv_allocated_pages": 2936}
+{"event": "token", "t": 0.8106212299317122, "uid": 0, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.8106212299317122, "uid": 1, "token_id": 477, "finished": false, "reason": null}
+{"event": "token", "t": 0.8106212299317122, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.8106212299317122, "uid": 3, "token_id": 25, "finished": false, "reason": null}
+{"event": "token", "t": 0.8106212299317122, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.8106212299317122, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.8106212299317122, "uid": 6, "token_id": 1456, "finished": false, "reason": null}
+{"event": "token", "t": 0.8106212299317122, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8109204610809684, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5248, "kv_allocated_pages": 2944}
+{"event": "token", "t": 0.822415366768837, "uid": 0, "token_id": 10824, "finished": false, "reason": null}
+{"event": "token", "t": 0.822415366768837, "uid": 1, "token_id": 28856, "finished": false, "reason": null}
+{"event": "token", "t": 0.822415366768837, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.822415366768837, "uid": 3, "token_id": 65647, "finished": false, "reason": null}
+{"event": "token", "t": 0.822415366768837, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.822415366768837, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.822415366768837, "uid": 6, "token_id": 311, "finished": false, "reason": null}
+{"event": "token", "t": 0.822415366768837, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8227123357355595, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5240, "kv_allocated_pages": 2952}
+{"event": "token", "t": 0.8342248247936368, "uid": 0, "token_id": 315, "finished": false, "reason": null}
+{"event": "token", "t": 0.8342248247936368, "uid": 1, "token_id": 7640, "finished": false, "reason": null}
+{"event": "token", "t": 0.8342248247936368, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.8342248247936368, "uid": 3, "token_id": 279, "finished": false, "reason": null}
+{"event": "token", "t": 0.8342248247936368, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.8342248247936368, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.8342248247936368, "uid": 6, "token_id": 1520, "finished": false, "reason": null}
+{"event": "token", "t": 0.8342248247936368, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8345188437961042, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5232, "kv_allocated_pages": 2960}
+{"event": "token", "t": 0.8460002467036247, "uid": 0, "token_id": 1521, "finished": false, "reason": null}
+{"event": "token", "t": 0.8460002467036247, "uid": 1, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.8460002467036247, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.8460002467036247, "uid": 3, "token_id": 734, "finished": false, "reason": null}
+{"event": "token", "t": 0.8460002467036247, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.8460002467036247, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.8460002467036247, "uid": 6, "token_id": 499, "finished": false, "reason": null}
+{"event": "token", "t": 0.8460002467036247, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8462978079915047, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5224, "kv_allocated_pages": 2968}
+{"event": "token", "t": 0.8578453408554196, "uid": 0, "token_id": 4787, "finished": false, "reason": null}
+{"event": "token", "t": 0.8578453408554196, "uid": 1, "token_id": 2209, "finished": false, "reason": null}
+{"event": "token", "t": 0.8578453408554196, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.8578453408554196, "uid": 3, "token_id": 198, "finished": false, "reason": null}
+{"event": "token", "t": 0.8578453408554196, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.8578453408554196, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.8578453408554196, "uid": 6, "token_id": 10765, "finished": false, "reason": null}
+{"event": "token", "t": 0.8578453408554196, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8581448029726744, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5216, "kv_allocated_pages": 2976}
+{"event": "token", "t": 0.8696943940594792, "uid": 0, "token_id": 382, "finished": false, "reason": null}
+{"event": "token", "t": 0.8696943940594792, "uid": 1, "token_id": 1070, "finished": false, "reason": null}
+{"event": "token", "t": 0.8696943940594792, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.8696943940594792, "uid": 3, "token_id": 791, "finished": false, "reason": null}
+{"event": "token", "t": 0.8696943940594792, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.8696943940594792, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.8696943940594792, "uid": 6, "token_id": 279, "finished": false, "reason": null}
+{"event": "token", "t": 0.8696943940594792, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8699872950091958, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5208, "kv_allocated_pages": 2984}
+{"event": "token", "t": 0.8814820758998394, "uid": 0, "token_id": 2, "finished": false, "reason": null}
+{"event": "token", "t": 0.8814820758998394, "uid": 1, "token_id": 4205, "finished": false, "reason": null}
+{"event": "token", "t": 0.8814820758998394, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.8814820758998394, "uid": 3, "token_id": 734, "finished": false, "reason": null}
+{"event": "token", "t": 0.8814820758998394, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.8814820758998394, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.8814820758998394, "uid": 6, "token_id": 1925, "finished": false, "reason": null}
+{"event": "token", "t": 0.8814820758998394, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8817732147872448, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5200, "kv_allocated_pages": 2992}
+{"event": "token", "t": 0.8932709549553692, "uid": 0, "token_id": 220, "finished": false, "reason": null}
+{"event": "token", "t": 0.8932709549553692, "uid": 1, "token_id": 775, "finished": false, "reason": null}
+{"event": "token", "t": 0.8932709549553692, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.8932709549553692, "uid": 3, "token_id": 374, "finished": false, "reason": null}
+{"event": "token", "t": 0.8932709549553692, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.8932709549553692, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.8932709549553692, "uid": 6, "token_id": 6956, "finished": false, "reason": null}
+{"event": "token", "t": 0.8932709549553692, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.8935789219103754, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5192, "kv_allocated_pages": 3000}
+{"event": "token", "t": 0.9050976927392185, "uid": 0, "token_id": 17, "finished": false, "reason": null}
+{"event": "token", "t": 0.9050976927392185, "uid": 1, "token_id": 358, "finished": false, "reason": null}
+{"event": "token", "t": 0.9050976927392185, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.9050976927392185, "uid": 3, "token_id": 282, "finished": false, "reason": null}
+{"event": "token", "t": 0.9050976927392185, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.9050976927392185, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.9050976927392185, "uid": 6, "token_id": 323, "finished": false, "reason": null}
+{"event": "token", "t": 0.9050976927392185, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.905404285993427, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5184, "kv_allocated_pages": 3008}
+{"event": "token", "t": 0.9169428297318518, "uid": 0, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.9169428297318518, "uid": 1, "token_id": 649, "finished": false, "reason": null}
+{"event": "token", "t": 0.9169428297318518, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.9169428297318518, "uid": 3, "token_id": 2120, "finished": false, "reason": null}
+{"event": "token", "t": 0.9169428297318518, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.9169428297318518, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.9169428297318518, "uid": 6, "token_id": 3493, "finished": false, "reason": null}
+{"event": "token", "t": 0.9169428297318518, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.9172412357293069, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5176, "kv_allocated_pages": 3016}
+{"event": "token", "t": 0.9287591548636556, "uid": 0, "token_id": 32934, "finished": false, "reason": null}
+{"event": "token", "t": 0.9287591548636556, "uid": 1, "token_id": 1520, "finished": false, "reason": null}
+{"event": "token", "t": 0.9287591548636556, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.9287591548636556, "uid": 3, "token_id": 8, "finished": false, "reason": null}
+{"event": "token", "t": 0.9287591548636556, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.9287591548636556, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.9287591548636556, "uid": 6, "token_id": 264, "finished": false, "reason": null}
+{"event": "token", "t": 0.9287591548636556, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.9290665336884558, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5168, "kv_allocated_pages": 3024}
+{"event": "token", "t": 0.9406329840421677, "uid": 0, "token_id": 198, "finished": false, "reason": null}
+{"event": "token", "t": 0.9406329840421677, "uid": 1, "token_id": 499, "finished": false, "reason": null}
+{"event": "token", "t": 0.9406329840421677, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.9406329840421677, "uid": 3, "token_id": 284, "finished": false, "reason": null}
+{"event": "token", "t": 0.9406329840421677, "uid": 4, "token_id": 12, "finished": false, "reason": null}
+{"event": "token", "t": 0.9406329840421677, "uid": 5, "token_id": 322, "finished": false, "reason": null}
+{"event": "token", "t": 0.9406329840421677, "uid": 6, "token_id": 3284, "finished": false, "reason": null}
+{"event": "token", "t": 0.9406329840421677, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.9409331367351115, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5160, "kv_allocated_pages": 3032}
+{"event": "token", "t": 0.9524710648693144, "uid": 0, "token_id": 791, "finished": false, "reason": null}
+{"event": "token", "t": 0.9524710648693144, "uid": 1, "token_id": 449, "finished": false, "reason": null}
+{"event": "token", "t": 0.9524710648693144, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.9524710648693144, "uid": 3, "token_id": 865, "finished": false, "reason": null}
+{"event": "token", "t": 0.9524710648693144, "uid": 4, "token_id": 82, "finished": false, "reason": null}
+{"event": "token", "t": 0.9524710648693144, "uid": 5, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.9524710648693144, "uid": 6, "token_id": 6425, "finished": false, "reason": null}
+{"event": "token", "t": 0.9524710648693144, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.9527665409259498, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5152, "kv_allocated_pages": 3040}
+{"event": "token", "t": 0.9642864400520921, "uid": 0, "token_id": 4787, "finished": false, "reason": null}
+{"event": "token", "t": 0.9642864400520921, "uid": 1, "token_id": 30, "finished": false, "reason": null}
+{"event": "token", "t": 0.9642864400520921, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.9642864400520921, "uid": 3, "token_id": 61, "finished": false, "reason": null}
+{"event": "token", "t": 0.9642864400520921, "uid": 4, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.9642864400520921, "uid": 5, "token_id": 456, "finished": false, "reason": null}
+{"event": "token", "t": 0.9642864400520921, "uid": 6, "token_id": 382, "finished": false, "reason": null}
+{"event": "token", "t": 0.9642864400520921, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.9645863748155534, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5144, "kv_allocated_pages": 3048}
+{"event": "token", "t": 0.9761173757724464, "uid": 0, "token_id": 527, "finished": false, "reason": null}
+{"event": "token", "t": 0.9761173757724464, "uid": 1, "token_id": 765, "finished": false, "reason": null}
+{"event": "token", "t": 0.9761173757724464, "uid": 2, "token_id": 16, "finished": false, "reason": null}
+{"event": "token", "t": 0.9761173757724464, "uid": 3, "token_id": 17, "finished": false, "reason": null}
+{"event": "token", "t": 0.9761173757724464, "uid": 4, "token_id": 262, "finished": false, "reason": null}
+{"event": "token", "t": 0.9761173757724464, "uid": 5, "token_id": 319, "finished": false, "reason": null}
+{"event": "token", "t": 0.9761173757724464, "uid": 6, "token_id": 791, "finished": false, "reason": null}
+{"event": "token", "t": 0.9761173757724464, "uid": 7, "token_id": 197, "finished": false, "reason": null}
+{"event": "batch", "t": 0.97641248581931, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5136, "kv_allocated_pages": 3056}
+{"event": "token", "t": 0.9879604717716575, "uid": 0, "token_id": 512, "finished": false, "reason": null}
+{"event": "token", "t": 0.9879604717716575, "uid": 1, "token_id": 92, "finished": false, "reason": null}
+{"event": "token", "t": 0.9879604717716575, "uid": 2, "token_id": 13, "finished": false, "reason": null}
+{"event": "token", "t": 0.9879604717716575, "uid": 3, "token_id": 489, "finished": false, "reason": null}
+{"event": "token", "t": 0.9879604717716575, "uid": 4, "token_id": 662, "finished": false, "reason": null}
+{"event": "token", "t": 0.9879604717716575, "uid": 5, "token_id": 197, "finished": false, "reason": null}
+{"event": "token", "t": 0.9879604717716575, "uid": 6, "token_id": 1495, "finished": false, "reason": null}
+{"event": "token", "t": 0.9879604717716575, "uid": 7, "token_id": 322, "finished": false, "reason": null}
+{"event": "batch", "t": 0.9882702049799263, "phase": "decode", "uids": [0, 1, 2, 3, 4, 5, 6, 7], "requests": 8, "input_tokens": 8, "pending": 0, "decode_running": 8, "kv_free_pages": 5128, "kv_allocated_pages": 3064}
+{"event": "token", "t": 0.9999525658786297, "uid": 0, "token_id": 12, "finished": true, "reason": "length"}
+{"event": "token", "t": 0.9999525658786297, "uid": 1, "token_id": 81923, "finished": true, "reason": "length"}
+{"event": "token", "t": 0.9999525658786297, "uid": 2, "token_id": 16, "finished": true, "reason": "length"}
+{"event": "token", "t": 0.9999525658786297, "uid": 3, "token_id": 220, "finished": true, "reason": "length"}
+{"event": "token", "t": 0.9999525658786297, "uid": 4, "token_id": 12, "finished": true, "reason": "length"}
+{"event": "token", "t": 0.9999525658786297, "uid": 5, "token_id": 322, "finished": true, "reason": "length"}
+{"event": "token", "t": 0.9999525658786297, "uid": 6, "token_id": 8111, "finished": true, "reason": "length"}
+{"event": "token", "t": 0.9999525658786297, "uid": 7, "token_id": 197, "finished": true, "reason": "length"}

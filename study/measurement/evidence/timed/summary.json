@@ -1,0 +1,315 @@
+{
+  "scenario": "timed",
+  "outputs_match": false,
+  "runs": [
+    {
+      "repetition": 0,
+      "trace": false,
+      "seconds": 1.1096716029569507,
+      "output_tokens": 512,
+      "sha256": "c152ecfb0e1cd7c175cff006f4f882223b3963db28ee620f0db0bb775a70323e"
+    },
+    {
+      "repetition": 0,
+      "trace": true,
+      "seconds": 1.0985155790112913,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76",
+      "metrics": {
+        "requests": 8,
+        "completed": 8,
+        "incomplete": 0,
+        "output_tokens": 512,
+        "duration_s": 1.098430952988565,
+        "output_tokens_per_s": 466.11942116795944,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.0473512354772538,
+          "p95": 0.1067801086390391,
+          "p99": 0.11280322551298887,
+          "max": 0.11430900473147632
+        },
+        "itl_s": {
+          "count": 504,
+          "p50": 0.01182879600673914,
+          "p95": 0.012054251483641564,
+          "p99": 0.11433068448211844,
+          "max": 0.21657348377630115
+        },
+        "e2e_s": {
+          "count": 8,
+          "p50": 0.9714698448777199,
+          "p95": 0.9945087367668748,
+          "p99": 0.9945087367668748,
+          "max": 0.9945087367668748
+        },
+        "arrival_to_first_schedule_s": {
+          "count": 8,
+          "p50": 0.02113209393806756,
+          "p95": 0.05540110733546316,
+          "p99": 0.06158868540115654,
+          "max": 0.0631355799175799
+        },
+        "ingress_lag_s": {
+          "count": 8,
+          "p50": 5.267001688480377e-05,
+          "p95": 0.01759317685198039,
+          "p99": 0.01879901746716351,
+          "max": 0.01910047762095929
+        },
+        "timestamp_domain": "CPU scheduler observation, not network or GPU time",
+        "p99_note": "Descriptive only; small samples do not support reliable tail claims."
+      }
+    },
+    {
+      "repetition": 1,
+      "trace": true,
+      "seconds": 1.1007981398142874,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76",
+      "metrics": {
+        "requests": 8,
+        "completed": 8,
+        "incomplete": 0,
+        "output_tokens": 512,
+        "duration_s": 1.1007356168702245,
+        "output_tokens_per_s": 465.1434841872335,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.04779014452360571,
+          "p95": 0.10886967386305332,
+          "p99": 0.11497418901920319,
+          "max": 0.11650031780824066
+        },
+        "itl_s": {
+          "count": 504,
+          "p50": 0.01183016411960125,
+          "p95": 0.012019166001118717,
+          "p99": 0.11451880647335047,
+          "max": 0.2185044097714126
+        },
+        "e2e_s": {
+          "count": 8,
+          "p50": 0.9737879875581712,
+          "p95": 0.9968403582461178,
+          "p99": 0.9968403582461178,
+          "max": 0.9968403582461178
+        },
+        "arrival_to_first_schedule_s": {
+          "count": 8,
+          "p50": 0.02148222861811519,
+          "p95": 0.057321448802948,
+          "p99": 0.06349186896383763,
+          "max": 0.06503447400406004
+        },
+        "ingress_lag_s": {
+          "count": 8,
+          "p50": 0.0001584519166499404,
+          "p95": 0.018383438282646245,
+          "p99": 0.019360524653084583,
+          "max": 0.019604796245694167
+        },
+        "timestamp_domain": "CPU scheduler observation, not network or GPU time",
+        "p99_note": "Descriptive only; small samples do not support reliable tail claims."
+      }
+    },
+    {
+      "repetition": 1,
+      "trace": false,
+      "seconds": 1.1097350758500397,
+      "output_tokens": 512,
+      "sha256": "c152ecfb0e1cd7c175cff006f4f882223b3963db28ee620f0db0bb775a70323e"
+    },
+    {
+      "repetition": 2,
+      "trace": false,
+      "seconds": 1.1002194792963564,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76"
+    },
+    {
+      "repetition": 2,
+      "trace": true,
+      "seconds": 1.0984328351914883,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76",
+      "metrics": {
+        "requests": 8,
+        "completed": 8,
+        "incomplete": 0,
+        "output_tokens": 512,
+        "duration_s": 1.0983775351196527,
+        "output_tokens_per_s": 466.14209015502564,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.04759639007970691,
+          "p95": 0.10623196758516132,
+          "p99": 0.1122565417740494,
+          "max": 0.11376268532127143
+        },
+        "itl_s": {
+          "count": 504,
+          "p50": 0.011842467822134495,
+          "p95": 0.012015964137390254,
+          "p99": 0.11392058966681208,
+          "max": 0.2158505292609334
+        },
+        "e2e_s": {
+          "count": 8,
+          "p50": 0.9714257569983602,
+          "p95": 0.9944739788770676,
+          "p99": 0.9944739788770676,
+          "max": 0.9944739788770676
+        },
+        "arrival_to_first_schedule_s": {
+          "count": 8,
+          "p50": 0.021235686577856544,
+          "p95": 0.05498467925190925,
+          "p99": 0.06106407283842564,
+          "max": 0.06258392123505474
+        },
+        "ingress_lag_s": {
+          "count": 8,
+          "p50": 0.00010687410831451694,
+          "p95": 0.017798785844817762,
+          "p99": 0.019017373304441577,
+          "max": 0.01932202016934753
+        },
+        "timestamp_domain": "CPU scheduler observation, not network or GPU time",
+        "p99_note": "Descriptive only; small samples do not support reliable tail claims."
+      }
+    },
+    {
+      "repetition": 3,
+      "trace": true,
+      "seconds": 1.099886440206319,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76",
+      "metrics": {
+        "requests": 8,
+        "completed": 8,
+        "incomplete": 0,
+        "output_tokens": 512,
+        "duration_s": 1.0997014101594687,
+        "output_tokens_per_s": 465.5809252129216,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.04774962197989226,
+          "p95": 0.10753149245120584,
+          "p99": 0.1135140768814832,
+          "max": 0.11500972298905254
+        },
+        "itl_s": {
+          "count": 504,
+          "p50": 0.0118403653614223,
+          "p95": 0.012031618249602614,
+          "p99": 0.11357359500136074,
+          "max": 0.21690643206238747
+        },
+        "e2e_s": {
+          "count": 8,
+          "p50": 0.9726780661847443,
+          "p95": 0.9956547222100198,
+          "p99": 0.9956547222100198,
+          "max": 0.9956547222100198
+        },
+        "arrival_to_first_schedule_s": {
+          "count": 8,
+          "p50": 0.021414427869021896,
+          "p95": 0.05646576589625328,
+          "p99": 0.06247013573106379,
+          "max": 0.06397122818976642
+        },
+        "ingress_lag_s": {
+          "count": 8,
+          "p50": 0.00023034652695060054,
+          "p95": 0.018318203629925853,
+          "p99": 0.019373195264115937,
+          "max": 0.019636943172663457
+        },
+        "timestamp_domain": "CPU scheduler observation, not network or GPU time",
+        "p99_note": "Descriptive only; small samples do not support reliable tail claims."
+      }
+    },
+    {
+      "repetition": 3,
+      "trace": false,
+      "seconds": 1.0974250338040292,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76"
+    },
+    {
+      "repetition": 4,
+      "trace": false,
+      "seconds": 1.098016157746315,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76"
+    },
+    {
+      "repetition": 4,
+      "trace": true,
+      "seconds": 1.1006721006706357,
+      "output_tokens": 512,
+      "sha256": "05b8f7c38b28fe690e9dab7e05c65f3da2e8641bdd57eabe3f7ae3a0284b9d76",
+      "metrics": {
+        "requests": 8,
+        "completed": 8,
+        "incomplete": 0,
+        "output_tokens": 512,
+        "duration_s": 1.100616649724543,
+        "output_tokens_per_s": 465.1937621769949,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.04833271675743163,
+          "p95": 0.10779550507850945,
+          "p99": 0.113789040819183,
+          "max": 0.11528742475435139
+        },
+        "itl_s": {
+          "count": 504,
+          "p50": 0.011847421061247587,
+          "p95": 0.012151025701314211,
+          "p99": 0.11386335480958071,
+          "max": 0.21684572380036116
+        },
+        "e2e_s": {
+          "count": 8,
+          "p50": 0.9735976403579116,
+          "p95": 0.9965786309912801,
+          "p99": 0.9965786309912801,
+          "max": 0.9965786309912801
+        },
+        "arrival_to_first_schedule_s": {
+          "count": 8,
+          "p50": 0.021596839269623164,
+          "p95": 0.05660553022008389,
+          "p99": 0.06269239787515253,
+          "max": 0.0642141147889197
+        },
+        "ingress_lag_s": {
+          "count": 8,
+          "p50": 0.0003779697697609691,
+          "p95": 0.01864516658522189,
+          "p99": 0.019812008346989755,
+          "max": 0.020103718787431724
+        },
+        "timestamp_domain": "CPU scheduler observation, not network or GPU time",
+        "p99_note": "Descriptive only; small samples do not support reliable tail claims."
+      }
+    }
+  ],
+  "median_seconds": {
+    "False": 1.1002194792963564,
+    "True": 1.099886440206319
+  },
+  "instrumentation_overhead_percent": -0.03027024119317545,
+  "source_commit": "528ba47b2e30826264afa3b9b1fe25720f6d02c0",
+  "source_dirty": false,
+  "torch": "2.9.1+cu128",
+  "gpu": "NVIDIA A800 80GB PCIe",
+  "model": "Meta-Llama-3.1-8B-Instruct",
+  "graph": true,
+  "overlap": false,
+  "cache": "naive",
+  "note": "Elapsed includes idle arrival waits. CPU-observed tokens; no HTTP. JSONL flushed outside timing."
+}
