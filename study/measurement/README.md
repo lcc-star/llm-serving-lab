@@ -39,3 +39,7 @@ Batch records include phase, true request/token counts, pending/running sizes an
 The default simultaneous-arrival control isolates instrumentation overhead. Use `--scenario timed` for delayed-arrival validation. Timed-output differences are retained for investigation, not accepted as proof of numerical correctness. One warmup is excluded. Five traced and five untraced trials alternate order. Both modes collect outputs and perform completion checks, so overhead measures extra event recording, not the full harness overhead versus a server. Every request must return its specified length; output hashes must match in the simultaneous-arrival control; timed-arrival hashes are reported separately because scheduling can change batch composition; cache integrity and table-slot recovery are checked after each trial. Unit tests cover known metrics, absent results, invalid ordering, single-token output and duplicate completion.
 
 P99 is only descriptive for the small smoke workload, not a statistically reliable tail claim. This stage does not prove scheduling improvements or predict online client latency. JSONL preserves raw records for independent analysis. Long-prefill interference experiments and production trace replay are subsequent stages.
+
+## Output divergence follow-up
+
+See [中文调查报告](DIVERGENCE_REPORT.md) for fixed-step interventions reproducing BF16 candidate ties. Run `python study/measurement/validate_divergence.py` to validate the saved controls on CPU. This explains the identified uid=1 token-60 divergence, not arbitrary future mismatches.
