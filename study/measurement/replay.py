@@ -12,7 +12,7 @@ import time
 os.environ['MINISGL_DISABLE_OVERLAP_SCHEDULING'] = '1'
 import torch
 from minisgl.core import SamplingParams
-from minisgl.llm import LLM, RequestAllFinished
+from minisgl.llm.llm import LLM, RequestAllFinished
 from minisgl.message import UserMsg
 from metrics import summarize
 
