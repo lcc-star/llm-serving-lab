@@ -9,12 +9,12 @@ Activate an environment with the project dependencies, then run from repository 
 ```bash
 export PYTHONPATH="$PWD/python"
 python -m unittest discover -s tests/measurement -v
-CUDA_VISIBLE_DEVICES=0 python study/measurement/replay.py \
+CUDA_VISIBLE_DEVICES=0 python study/stage01_measurement/replay.py \
   --model /path/to/Meta-Llama-3.1-8B-Instruct \
-  --output study/measurement/runs/example
-python study/measurement/analyze.py \
-  study/measurement/runs/example/events_0.jsonl \
-  --output study/measurement/runs/example/analysis
+  --output study/stage01_measurement/runs/example
+python study/stage01_measurement/analyze.py \
+  study/stage01_measurement/runs/example/events_0.jsonl \
+  --output study/stage01_measurement/runs/example/analysis
 ```
 
 Optional `--workload file.json` accepts an arrival-sorted JSON array of `{uid, arrival, input_ids, max_tokens}`. IDs must be unique, arrivals are relative seconds (0..30), input+output must fit 1024 tokens. Inputs must be valid IDs for the selected model. The harness delivers all due requests at each scheduler receive boundary; it never waits for a response before advancing the arrival schedule. Late delivery is recorded as ingress lag. This is a scheduler-boundary replay, not a separate network load generator. CPU tensors are prepared before timing.
@@ -42,4 +42,4 @@ P99 is only descriptive for the small smoke workload, not a statistically reliab
 
 ## Output divergence follow-up
 
-See [中文调查报告](DIVERGENCE_REPORT.md) for fixed-step interventions reproducing BF16 candidate ties. Run `python study/measurement/validate_divergence.py` to validate the saved controls on CPU. This explains the identified uid=1 token-60 divergence, not arbitrary future mismatches.
+See [中文调查报告](DIVERGENCE_REPORT.md) for fixed-step interventions reproducing BF16 candidate ties. Run `python study/stage01_measurement/validate_divergence.py` to validate the saved controls on CPU. This explains the identified uid=1 token-60 divergence, not arbitrary future mismatches.

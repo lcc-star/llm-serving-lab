@@ -2,7 +2,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-spec = importlib.util.spec_from_file_location('metrics', Path(__file__).parents[2]/'study/measurement/metrics.py')
+spec = importlib.util.spec_from_file_location('metrics', Path(__file__).parents[2]/'study/stage01_measurement/metrics.py')
 metrics = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(metrics)
 

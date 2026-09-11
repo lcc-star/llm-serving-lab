@@ -55,9 +55,9 @@ release_step 11 与 12 在目标位置之前的输入和前 60 个生成 token �
 在仓库根目录激活依赖环境，并设置 `PYTHONPATH="$PWD/python"`：
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python study/measurement/diagnose_outputs.py --model /path/to/model --graph 8 --output study/measurement/runs/diagnose_graph
-CUDA_VISIBLE_DEVICES=0 python study/measurement/diagnose_outputs.py --model /path/to/model --graph 0 --output study/measurement/runs/diagnose_probe
-python study/measurement/validate_divergence.py
+CUDA_VISIBLE_DEVICES=0 python study/stage01_measurement/diagnose_outputs.py --model /path/to/model --graph 8 --output study/stage01_measurement/runs/diagnose_graph
+CUDA_VISIBLE_DEVICES=0 python study/stage01_measurement/diagnose_outputs.py --model /path/to/model --graph 0 --output study/stage01_measurement/runs/diagnose_probe
+python study/stage01_measurement/validate_divergence.py
 ```
 
 原始调度、输出与候选数据见 `evidence/divergence/`；完整 logits 的 PT 文件保留在本地 `runs/`，未纳入仓库。验证脚本核对重复性、图开关一致性、前缀一致性、舍入和同分选择。

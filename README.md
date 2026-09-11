@@ -22,9 +22,9 @@ uv venv --python=3.12
 source .venv/bin/activate
 uv pip install -e .
 export MODEL_PATH=/path/to/Meta-Llama-3.1-8B-Instruct
-CUDA_VISIBLE_DEVICES=0 python study/bench_cuda_graph.py --graph 8 --requests 8
-CUDA_VISIBLE_DEVICES=0 MINISGL_DISABLE_OVERLAP_SCHEDULING=0 python study/bench_overlap.py --graph 8 --requests 8
-CUDA_VISIBLE_DEVICES=0,1 python study/bench_tp.py --tp 2
+CUDA_VISIBLE_DEVICES=0 python study/stage00_baselines/bench_cuda_graph.py --graph 8 --requests 8
+CUDA_VISIBLE_DEVICES=0 MINISGL_DISABLE_OVERLAP_SCHEDULING=0 python study/stage00_baselines/bench_overlap.py --graph 8 --requests 8
+CUDA_VISIBLE_DEVICES=0,1 python study/stage00_baselines/bench_tp.py --tp 2
 ```
 
 TP 自定义通信扩展需要链接 NCCL；确保编译器可以找到 `libnccl.so`，运行时可以找到 `libnccl.so.2`。
