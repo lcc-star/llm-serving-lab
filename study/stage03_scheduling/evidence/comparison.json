@@ -1,0 +1,155 @@
+[
+  {
+    "scenario": "short_only",
+    "policy": "prefill_first",
+    "repeats": 5,
+    "short_itl_p50_ms": 11.577041819691658,
+    "short_itl_p95_ms": 11.653489898890257,
+    "short_max_itl_ms": 12.044955044984818,
+    "short_max_itl_range_ms": [
+      11.927018873393536,
+      12.095458339899778
+    ],
+    "long_ttft_p50_ms": null,
+    "long_ttft_max_ms": null,
+    "long_max_first_schedule_wait_ms": 0,
+    "throughput": 342.18457446838653,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "short_only",
+    "policy": "decode_first",
+    "repeats": 5,
+    "short_itl_p50_ms": 11.580007150769234,
+    "short_itl_p95_ms": 11.66387414559722,
+    "short_max_itl_ms": 12.113695032894611,
+    "short_max_itl_range_ms": [
+      11.861279606819153,
+      12.152269016951323
+    ],
+    "long_ttft_p50_ms": null,
+    "long_ttft_max_ms": null,
+    "long_max_first_schedule_wait_ms": 0,
+    "throughput": 342.0287415912413,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "short_only",
+    "policy": "alternating",
+    "repeats": 5,
+    "short_itl_p50_ms": 11.575428303331137,
+    "short_itl_p95_ms": 11.66304899379611,
+    "short_max_itl_ms": 12.062220834195614,
+    "short_max_itl_range_ms": [
+      12.033742852509022,
+      12.152569834142923
+    ],
+    "long_ttft_p50_ms": null,
+    "long_ttft_max_ms": null,
+    "long_max_first_schedule_wait_ms": 0,
+    "throughput": 342.0541070064278,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "long_burst",
+    "policy": "prefill_first",
+    "repeats": 5,
+    "short_itl_p50_ms": 11.96671836078167,
+    "short_itl_p95_ms": 13.190370053052902,
+    "short_max_itl_ms": 1404.3749580159783,
+    "short_max_itl_range_ms": [
+      1354.783633723855,
+      1408.9729809202254
+    ],
+    "long_ttft_p50_ms": 876.3886157423258,
+    "long_ttft_max_ms": 1397.427248582244,
+    "long_max_first_schedule_wait_ms": 1051.1818456463516,
+    "throughput": 335.1428575584447,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "long_burst",
+    "policy": "decode_first",
+    "repeats": 5,
+    "short_itl_p50_ms": 11.577508877962828,
+    "short_itl_p95_ms": 11.656171176582575,
+    "short_max_itl_ms": 12.034589890390635,
+    "short_max_itl_range_ms": [
+      11.947214137762785,
+      12.094624806195498
+    ],
+    "long_ttft_p50_ms": 5812.430707551539,
+    "long_ttft_max_ms": 8582.788316346705,
+    "long_max_first_schedule_wait_ms": 8235.192048177123,
+    "throughput": 147.9506263533643,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "long_burst",
+    "policy": "alternating",
+    "repeats": 5,
+    "short_itl_p50_ms": 13.071974739432335,
+    "short_itl_p95_ms": 93.43674127012491,
+    "short_max_itl_ms": 105.41076213121414,
+    "short_max_itl_range_ms": [
+      102.55691921338439,
+      106.92346515133977
+    ],
+    "long_ttft_p50_ms": 978.1594847328961,
+    "long_ttft_max_ms": 1574.0476872771978,
+    "long_max_first_schedule_wait_ms": 1189.5655941218138,
+    "throughput": 335.22797512916895,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "sustained",
+    "policy": "prefill_first",
+    "repeats": 5,
+    "short_itl_p50_ms": 11.912594083696604,
+    "short_itl_p95_ms": 13.216905761510134,
+    "short_max_itl_ms": 1405.0836898386478,
+    "short_max_itl_range_ms": [
+      1371.080085169524,
+      1407.7622946351767
+    ],
+    "long_ttft_p50_ms": 1880.980222672224,
+    "long_ttft_max_ms": 3409.1625889763236,
+    "long_max_first_schedule_wait_ms": 3061.624388769269,
+    "throughput": 335.06635992400754,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "sustained",
+    "policy": "decode_first",
+    "repeats": 5,
+    "short_itl_p50_ms": 11.628071311861277,
+    "short_itl_p95_ms": 11.739786248654127,
+    "short_max_itl_ms": 11.902052909135818,
+    "short_max_itl_range_ms": [
+      11.863258201628923,
+      12.046071700751781
+    ],
+    "long_ttft_p50_ms": 11976.883917534724,
+    "long_ttft_max_ms": 17921.003074012697,
+    "long_max_first_schedule_wait_ms": 17574.70163293183,
+    "throughput": 147.89322168505103,
+    "output_hashes": 1
+  },
+  {
+    "scenario": "sustained",
+    "policy": "alternating",
+    "repeats": 5,
+    "short_itl_p50_ms": 13.077527284622192,
+    "short_itl_p95_ms": 93.30507693812251,
+    "short_max_itl_ms": 105.99737567827106,
+    "short_max_itl_range_ms": [
+      104.7051758505404,
+      106.57646926119924
+    ],
+    "long_ttft_p50_ms": 1997.4187714513391,
+    "long_ttft_max_ms": 3613.824496138841,
+    "long_max_first_schedule_wait_ms": 3229.8001713119447,
+    "throughput": 335.5516061230099,
+    "output_hashes": 1
+  }
+]

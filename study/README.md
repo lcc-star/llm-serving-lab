@@ -5,5 +5,6 @@
 | `stage00_baselines/` | 课程期间的 Graph、重叠调度和 TP 基线实验 |
 | `stage01_measurement/` | 回放、指标、时间线、记录开销及输出差异调查 |
 | `stage02_prefill_interference/` | 长 prefill 干扰 decode 的预算对照；不改调度策略 |
+| `stage03_scheduling/` | 可切换批次策略、延迟权衡与生命周期验证 |
 
 每阶段包含自己的入口、说明、报告及证据。阶段二复用阶段一的测量工具，避免重复实现指标。后续阶段按相同命名方式添加。`runs/` 保存本地生成产物，审核选定证据后纳入版本控制。

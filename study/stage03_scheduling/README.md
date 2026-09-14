@@ -13,4 +13,11 @@ python -m unittest discover -s tests/stage03 -v
 CUDA_VISIBLE_DEVICES=0 python study/stage03_scheduling/run.py --model /path/to/model --output study/stage03_scheduling/runs/main
 ```
 
-策略测试覆盖默认顺序、预算传递、交替、资源阻塞回退、无decode/空闲与非法配置。真实GPU回放验证输出数量、分块预算、重复完成防护和资源回收。EOS、取消及重叠/多卡还需独立验证，不将有限工作负载无遗漏等同于完整正确性。
+策略测试覆盖默认顺序、预算传递、交替、资源阻塞回退、无decode/空闲与非法配置。真实GPU回放验证输出数量、分块预算、重复完成防护和资源回收。`check_lifecycle.py`额外通过真实GPU前向和可控采样验证EOS、长度结束及等待/分块/decode取消。重叠调度、多卡和Radix缓存组合未在本阶段验证，不将有限工作负载无遗漏等同于完整正确性。
+
+```bash
+python study/stage03_scheduling/summarize.py study/stage03_scheduling/runs/main
+CUDA_VISIBLE_DEVICES=0 python study/stage03_scheduling/check_lifecycle.py --model /path/to/model --output study/stage03_scheduling/runs/lifecycle.json
+```
+
+已完成 45 次正式性能回放、9 个 GPU 生命周期用例及 14 个阶段一至三单元测试。结果、指标定义与局限见 [中文实验报告](REPORT.md)，完整原始数据见 [evidence](evidence)。交替调度改善最大间隔，但 P95 间隔有所增大。

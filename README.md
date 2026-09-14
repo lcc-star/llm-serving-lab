@@ -14,7 +14,7 @@
 - `tests/`：上游测试。
 - `docs/experiment-plan.md`：调度优化计划。
 
-当前实验测量的是上游已有能力；新的调度策略尚未实现。
+阶段零到二测量原始策略；阶段三新增可切换的批次策略，默认仍为原始 prefill 优先。详见 [阶段三说明](study/stage03_scheduling/README.md)。
 
 ## 环境与实验
 
