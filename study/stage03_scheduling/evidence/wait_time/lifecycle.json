@@ -1,0 +1,202 @@
+[
+  {
+    "policy": "prefill_first",
+    "case": "eos_and_length",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 128009,
+        "finished": true
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "policy": "prefill_first",
+    "case": "cancel_pending_and_chunk",
+    "passed": true,
+    "replies": []
+  },
+  {
+    "policy": "prefill_first",
+    "case": "cancel_decode",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      }
+    ]
+  },
+  {
+    "policy": "decode_first",
+    "case": "eos_and_length",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 128009,
+        "finished": true
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "policy": "decode_first",
+    "case": "cancel_pending_and_chunk",
+    "passed": true,
+    "replies": []
+  },
+  {
+    "policy": "decode_first",
+    "case": "cancel_decode",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      }
+    ]
+  },
+  {
+    "policy": "alternating",
+    "case": "eos_and_length",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 128009,
+        "finished": true
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "policy": "alternating",
+    "case": "cancel_pending_and_chunk",
+    "passed": true,
+    "replies": []
+  },
+  {
+    "policy": "alternating",
+    "case": "cancel_decode",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      }
+    ]
+  },
+  {
+    "policy": "wait_time",
+    "case": "eos_and_length",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 128009,
+        "finished": true
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "policy": "wait_time",
+    "case": "cancel_pending_and_chunk",
+    "passed": true,
+    "replies": []
+  },
+  {
+    "policy": "wait_time",
+    "case": "cancel_decode",
+    "passed": true,
+    "replies": [
+      {
+        "uid": 0,
+        "token": 100,
+        "finished": false
+      },
+      {
+        "uid": 1,
+        "token": 100,
+        "finished": false
+      }
+    ]
+  }
+]

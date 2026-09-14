@@ -1,0 +1,132 @@
+[
+  {
+    "scenario": "short_only",
+    "policy": "decode_first",
+    "repetition": 0,
+    "different_requests": []
+  },
+  {
+    "scenario": "short_only",
+    "policy": "wait_time",
+    "repetition": 0,
+    "different_requests": []
+  },
+  {
+    "scenario": "long_burst",
+    "policy": "decode_first",
+    "repetition": 0,
+    "different_requests": [
+      {
+        "uid": 1,
+        "first_different_token_index": 36,
+        "baseline_token": 5780,
+        "policy_token": 4221
+      },
+      {
+        "uid": 3,
+        "first_different_token_index": 25,
+        "baseline_token": 8029,
+        "policy_token": 11000
+      },
+      {
+        "uid": 5,
+        "first_different_token_index": 4,
+        "baseline_token": 81923,
+        "policy_token": 775
+      },
+      {
+        "uid": 6,
+        "first_different_token_index": 9,
+        "baseline_token": 13325,
+        "policy_token": 3544
+      }
+    ]
+  },
+  {
+    "scenario": "long_burst",
+    "policy": "wait_time",
+    "repetition": 0,
+    "different_requests": [
+      {
+        "uid": 1,
+        "first_different_token_index": 36,
+        "baseline_token": 5780,
+        "policy_token": 4221
+      },
+      {
+        "uid": 3,
+        "first_different_token_index": 25,
+        "baseline_token": 8029,
+        "policy_token": 11000
+      },
+      {
+        "uid": 5,
+        "first_different_token_index": 55,
+        "baseline_token": 6103,
+        "policy_token": 20047
+      },
+      {
+        "uid": 6,
+        "first_different_token_index": 5,
+        "baseline_token": 4077,
+        "policy_token": 19884
+      }
+    ]
+  },
+  {
+    "scenario": "sustained",
+    "policy": "decode_first",
+    "repetition": 0,
+    "different_requests": [
+      {
+        "uid": 1,
+        "first_different_token_index": 36,
+        "baseline_token": 5780,
+        "policy_token": 4221
+      },
+      {
+        "uid": 3,
+        "first_different_token_index": 25,
+        "baseline_token": 8029,
+        "policy_token": 11000
+      },
+      {
+        "uid": 4,
+        "first_different_token_index": 33,
+        "baseline_token": 56887,
+        "policy_token": 810
+      },
+      {
+        "uid": 7,
+        "first_different_token_index": 91,
+        "baseline_token": 323,
+        "policy_token": 11
+      }
+    ]
+  },
+  {
+    "scenario": "sustained",
+    "policy": "wait_time",
+    "repetition": 0,
+    "different_requests": [
+      {
+        "uid": 1,
+        "first_different_token_index": 40,
+        "baseline_token": 358,
+        "policy_token": 1102
+      },
+      {
+        "uid": 3,
+        "first_different_token_index": 25,
+        "baseline_token": 8029,
+        "policy_token": 11000
+      },
+      {
+        "uid": 4,
+        "first_different_token_index": 33,
+        "baseline_token": 56887,
+        "policy_token": 810
+      }
+    ]
+  }
+]

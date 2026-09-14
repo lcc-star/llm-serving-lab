@@ -14,7 +14,7 @@
 - `tests/`：上游测试。
 - `docs/experiment-plan.md`：调度优化计划。
 
-阶段零到二测量原始策略；阶段三新增可切换的批次策略，默认仍为原始 prefill 优先。详见 [阶段三说明](study/stage03_scheduling/README.md)。
+阶段零到二测量原始策略；阶段三新增带等待阈值的公平调度策略、决策日志及优先级对照，默认仍为原始 prefill 优先。详见 [阶段三说明](study/stage03_scheduling/README.md)。
 
 ## 环境与实验
 

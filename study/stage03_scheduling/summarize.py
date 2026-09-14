@@ -28,6 +28,7 @@ def main():
             groups.append(dict(scenario=scenario,policy=policy,repeats=len(runs),
                 short_itl_p50_ms=med(lambda r:r['metrics']['short_itl_s']['p50']*1000),
                 short_itl_p95_ms=med(lambda r:r['metrics']['short_itl_s']['p95']*1000),
+                short_itl_p99_ms=med(lambda r:r['metrics']['short_itl_s']['p99']*1000),
                 short_max_itl_ms=med(lambda r:r['metrics']['short_itl_s']['max']*1000),
                 short_max_itl_range_ms=[min(r['metrics']['short_itl_s']['max']*1000 for r in runs),max(r['metrics']['short_itl_s']['max']*1000 for r in runs)],
                 long_ttft_p50_ms=med(lambda r:r['metrics']['long_ttft_s']['p50']*1000) if scenario!='short_only' else None,
