@@ -1,6 +1,9 @@
 import importlib.util
 from pathlib import Path
 import unittest
+import subprocess
+import sys
+import os
 
 spec=importlib.util.spec_from_file_location('workloads',Path(__file__).parents[2]/'study/stage04_system_evaluation/workloads.py')
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
@@ -32,3 +35,17 @@ class WorkloadTests(unittest.TestCase):
     def test_capacity_and_invalid_input(self):
         self.assertEqual(m.page_capacity('kv_tight'),4608)
         with self.assertRaises(ValueError):m.make_workload(self.pool,'short_only',7,1,0)
+
+    def test_reproducible_across_python_hash_seeds(self):
+        code = """
+import importlib.util
+from pathlib import Path
+p=Path('study/stage04_system_evaluation/workloads.py')
+s=importlib.util.spec_from_file_location('w',p);m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+pool=[dict(bucket=k,input_ids=[i]*n) for k,n in [('short',64),('long',2048)] for i in range(100,140)]
+print([m.workload_hash(m.make_workload(pool,scenario,24,2,42)) for scenario in m.SCENARIOS])
+"""
+        results=[subprocess.check_output([sys.executable,'-c',code],
+                 cwd=Path(__file__).parents[2],env=dict(os.environ,PYTHONHASHSEED=str(seed)))
+                 for seed in range(4)]
+        self.assertTrue(all(result==results[0] for result in results))

@@ -1,5 +1,6 @@
 """Recompute private evidence and export only aggregate, allowlisted statistics."""
 import argparse
+import hashlib
 from collections import defaultdict
 import json
 from pathlib import Path
@@ -28,6 +29,8 @@ def collect(root, pools):
         assert analyze(events,rows)==record['metrics']
         outputs=json.loads(path.with_name(path.stem+'_outputs.json').read_text())
         assert {int(uid):len(tokens) for uid,tokens in outputs.items()}=={r['uid']:r['max_tokens'] for r in rows}
+        normalized={int(uid):tokens for uid,tokens in outputs.items()}
+        assert hashlib.sha256(json.dumps(normalized,sort_keys=True).encode()).hexdigest()==record['sha256']
         # No token IDs, source conversation IDs, prompt text or raw trace is exported.
         records.append({k:record[k] for k in ('job','status','source_commit','workload_sha256',
                                              'gpu','torch','model','seconds','output_tokens','metrics')})

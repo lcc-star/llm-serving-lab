@@ -1,6 +1,7 @@
 """Deterministic open-loop arrivals over private, conversation-disjoint pools."""
 import hashlib
 import json
+import math
 import random
 
 SCENARIOS = ('short_only', 'long_only', 'mixed_steady', 'long_burst', 'decode_new', 'kv_tight')
@@ -8,7 +9,7 @@ POLICIES = ('prefill_first', 'decode_first', 'wait_time')
 
 
 def make_workload(pool, scenario, count, rate, seed):
-    if scenario not in SCENARIOS or count < 8 or count % 2 or rate < 0:
+    if scenario not in SCENARIOS or count < 8 or count % 2 or not math.isfinite(rate) or rate < 0:
         raise ValueError('Expected a known scenario, even count >= 8 and nonnegative rate')
     prompt_rng = random.Random(seed)
     arrival_rng = random.Random(seed + 1_000_003)
@@ -23,7 +24,7 @@ def make_workload(pool, scenario, count, rate, seed):
         if scenario in ('mixed_steady', 'kv_tight'):
             prompt_rng.shuffle(kinds)
     samples = {kind: iter(prompt_rng.sample([r for r in pool if r['bucket'] == kind],
-                                           kinds.count(kind))) for kind in set(kinds)}
+                                           kinds.count(kind))) for kind in sorted(set(kinds))}
     rows, t, short_t = [], 0.0, 0.0
     for uid, kind in enumerate(kinds):
         if rate == 0:
