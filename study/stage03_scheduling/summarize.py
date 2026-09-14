@@ -12,7 +12,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('directory',type=Path);args=p.parse_args()
     root=args.directory;data=json.loads((root/'summary.json').read_text());groups=[]
     for scenario in ('short_only','long_burst','sustained'):
-        for policy in ('prefill_first','decode_first','alternating'):
+        for policy in data.get('policies', ('prefill_first','decode_first','alternating')):
             runs=[r for r in data['runs'] if r['scenario']==scenario and r['policy']==policy]
             waits=[]
             for r in runs:
@@ -36,8 +36,9 @@ def main():
                 throughput=med(lambda r:r['metrics']['output_tokens_per_s']),
                 output_hashes=len({r['sha256'] for r in runs})))
     (root/'comparison.json').write_text(json.dumps(groups,indent=2)+'\n')
-    colors={'prefill_first':'#d88724','decode_first':'#3286bb','alternating':'#27935a'}
-    svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610">',
+    colors={'prefill_first':'#d88724','decode_first':'#3286bb','alternating':'#27935a','wait_time':'#7952b3'}
+    height=120+140*len(data.get('policies', ('prefill_first','decode_first','alternating')))
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}" viewBox="0 0 1200 {height}">',
          '<rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" font-size="14">',
          '<text x="20" y="25">Stage 3: medians across runs; CPU-observed milliseconds (separate scales per panel)</text>']
     for panel,(field,title) in enumerate([('short_max_itl_ms','Maximum short-request ITL'),('long_ttft_p50_ms','Long-request median TTFT')]):

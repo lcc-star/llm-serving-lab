@@ -11,9 +11,11 @@ BatchPolicy=module.BatchPolicy
 class Manager:
     def __init__(self,phase):
         self.phase=phase;self.available=True;self.calls=[]
+        self.pending_list=[SimpleNamespace(uid=0)]
+        self.running_reqs=[SimpleNamespace(uid=1)]
     def schedule_next_batch(self,*args):
         self.calls.append(args)
-        return SimpleNamespace(phase=self.phase) if self.available else None
+        return SimpleNamespace(phase=self.phase, reqs=self.pending_list if self.phase=="prefill" else self.running_reqs) if self.available else None
 
 
 class PolicyTests(unittest.TestCase):

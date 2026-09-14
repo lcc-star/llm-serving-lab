@@ -62,6 +62,7 @@ def main():
                 torch.cuda.synchronize()
                 llm.cache_manager.check_integrity()
                 assert llm.table_manager.available_size==8
+                assert all(not waits for waits in llm.batch_policy.wait_since.values())
                 assert not llm.prefill_manager.pending_list and not llm.decode_manager.running_reqs
                 if case=='eos_and_length':
                     r0=[r for r in llm.replies if r['uid']==0];r1=[r for r in llm.replies if r['uid']==1]
@@ -72,7 +73,7 @@ def main():
                 results.append(dict(policy=policy,case=case,passed=True,replies=llm.replies))
         a.output.parent.mkdir(parents=True,exist_ok=True)
         a.output.write_text(json.dumps(results,indent=2)+'\n')
-        print('PASS: 9 GPU lifecycle cases (EOS, length, waiting/chunk/decode cancellation)')
+        print(f'PASS: {len(results)} GPU lifecycle cases (EOS, length, waiting/chunk/decode cancellation)')
     finally:llm.shutdown()
 
 

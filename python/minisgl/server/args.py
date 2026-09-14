@@ -72,8 +72,15 @@ def parse_args(args: List[str], run_shell: bool = False) -> Tuple[ServerArgs, bo
         "--scheduling-policy",
         choices=SUPPORTED_POLICIES,
         default=ServerArgs.scheduling_policy,
-        help="Batch phase order: prefill first (default), decode first, or alternating.",
+        help="Batch phase policy (wait_time currently requires TP=1).",
     )
+
+    parser.add_argument("--decode-wait-ms", type=float, default=ServerArgs.decode_wait_ms,
+                        help="Decode scheduling trigger in milliseconds, not a latency bound.")
+    parser.add_argument("--prefill-wait-ms", type=float, default=ServerArgs.prefill_wait_ms,
+                        help="Prefill scheduling trigger in milliseconds, not a latency bound.")
+    parser.add_argument("--log-scheduling-decisions", action="store_true",
+                        help="Log phase waits, thresholds, selection reason and fallback.")
 
     parser.add_argument(
         "--model-path",

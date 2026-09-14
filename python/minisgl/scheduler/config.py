@@ -17,6 +17,9 @@ class SchedulerConfig(EngineConfig):
     cache_type: str = "radix"
     offline_mode: bool = False
     scheduling_policy: str = "prefill_first"
+    decode_wait_ms: float = 50.0
+    prefill_wait_ms: float = 200.0
+    log_scheduling_decisions: bool = False
 
     # networking config
     _unique_suffix: str = field(default_factory=_get_pid_suffix)

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from typing import TYPE_CHECKING, List, NamedTuple, NoReturn, Set, Tuple, TypeAlias
 
 import torch
@@ -47,7 +49,13 @@ class Scheduler(SchedulerIOMixin):
     def __init__(self, config: SchedulerConfig):
         from minisgl.engine import Engine
 
-        self.batch_policy = BatchPolicy(config.scheduling_policy)
+        if config.scheduling_policy == "wait_time" and config.tp_info.size != 1:
+            raise ValueError("wait_time currently requires TP=1; rank clocks are not synchronized")
+        self.batch_policy = BatchPolicy(
+            config.scheduling_policy, decode_wait_ms=config.decode_wait_ms,
+            prefill_wait_ms=config.prefill_wait_ms,
+        )
+        self.log_scheduling_decisions = config.log_scheduling_decisions
         self.engine = Engine(config)
 
         # use another stream to overlap metadata processing with computation
@@ -166,6 +174,7 @@ class Scheduler(SchedulerIOMixin):
                     self.cache_manager.cache_req(req, finished=False)
 
         self.finished_reqs = new_finished_reqs
+        self.batch_policy.observe(self.prefill_manager, self.decode_manager)
         self.send_result(reply)
 
     def _process_one_msg(self, msg: BaseBackendMsg) -> None:
@@ -189,12 +198,14 @@ class Scheduler(SchedulerIOMixin):
                     f"Adjust max_tokens to {max_output_len} for request {msg.uid}."
                 )
             self.prefill_manager.add_one_req(msg)
+            self.batch_policy.observe(self.prefill_manager, self.decode_manager)
         elif isinstance(msg, AbortBackendMsg):
             logger.debug_rank0("Aborting request %d", msg.uid)
             req_to_free = self.prefill_manager.abort_req(msg.uid)
             req_to_free = req_to_free or self.decode_manager.abort_req(msg.uid)
             if req_to_free is not None:
                 self._free_req_resources(req_to_free)
+            self.batch_policy.observe(self.prefill_manager, self.decode_manager)
         else:
             logger.error(f"Unknown message type: {type(msg)}")
             raise NotImplementedError
@@ -222,7 +233,12 @@ class Scheduler(SchedulerIOMixin):
         batch = self.batch_policy.select(
             self.prefill_manager, self.decode_manager, self.prefill_budget
         )
+        self._record_scheduling_decision(self.batch_policy.last_decision)
         return self._prepare_batch(batch) if batch else None
+
+    def _record_scheduling_decision(self, decision: dict) -> None:
+        if self.log_scheduling_decisions:
+            logger.info_rank0("Scheduling decision: %s", json.dumps(decision))
 
     def _forward(self, forward_input: ForwardInput) -> ForwardOutput:
         batch, sample_args, input_mapping, output_mapping = forward_input
@@ -230,6 +246,7 @@ class Scheduler(SchedulerIOMixin):
         forward_output = self.engine.forward_batch(batch, sample_args)
         self.token_pool[output_mapping] = forward_output.next_tokens_gpu
         self.decode_manager.filter_reqs(forward_input.batch.reqs)
+        self.batch_policy.observe(self.prefill_manager, self.decode_manager)
         return forward_output
 
 

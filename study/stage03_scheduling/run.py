@@ -15,7 +15,12 @@ from minisgl.scheduler.policy import BatchPolicy, SUPPORTED_POLICIES
 class PolicyLLM(InterferenceLLM):
     def reset_replay(self,rows,trace):
         super().reset_replay(rows,trace)
-        self.batch_policy=BatchPolicy(self.policy_name)
+        self.batch_policy=BatchPolicy(self.policy_name, decode_wait_ms=self.decode_wait_ms,
+                                     prefill_wait_ms=self.prefill_wait_ms)
+
+    def _record_scheduling_decision(self, decision):
+        if self.trace:
+            self.events.append(dict(event="decision", t=self.now(), **decision))
 
 
 def main():
@@ -23,7 +28,13 @@ def main():
     parser.add_argument('--model',required=True)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--repeats',type=int,default=5)
+    parser.add_argument('--policies', nargs='+', choices=SUPPORTED_POLICIES,
+                        default=['prefill_first', 'decode_first', 'wait_time'])
+    parser.add_argument('--decode-wait-ms', type=float, default=50.0)
+    parser.add_argument('--prefill-wait-ms', type=float, default=200.0)
     args=parser.parse_args();assert args.repeats>0
+    assert len(set(args.policies)) == len(args.policies)
+    BatchPolicy('wait_time', decode_wait_ms=args.decode_wait_ms, prefill_wait_ms=args.prefill_wait_ms)
     args.output.mkdir(parents=True,exist_ok=True)
     cases=workloads()
     rng=random.Random(2027)
@@ -36,17 +47,20 @@ def main():
     llm=PolicyLLM(args.model,cuda_graph_max_bs=8,cache_type='naive',num_page_override=32768,
                   page_size=1,max_running_req=8,max_seq_len_override=8192,max_extend_tokens=4096)
     llm.prefill_budget=1024
+    llm.decode_wait_ms=args.decode_wait_ms
+    llm.prefill_wait_ms=args.prefill_wait_ms
     runs=[]
     try:
-        for policy in SUPPORTED_POLICIES:
+        for policy in args.policies:
             llm.policy_name=policy;llm.replay(cases['long_burst'],True)
-        configs=[(s,p) for s in cases for p in SUPPORTED_POLICIES]
+        configs=[(s,p) for s in cases for p in args.policies]
         for rep in range(args.repeats):
             order=configs[rep%len(configs):]+configs[:rep%len(configs)]
             if rep%2:order=list(reversed(order))
             for scenario,policy in order:
                 llm.policy_name=policy
                 record=llm.replay(cases[scenario],True)
+                assert all(not waits for waits in llm.batch_policy.wait_since.values())
                 assert record['output_tokens']==sum(r['max_tokens'] for r in cases[scenario])
                 metrics=analyze(llm.events)
                 assert metrics['completed']==len(cases[scenario])
@@ -58,7 +72,8 @@ def main():
                 (args.output/f'{name}_outputs.json').write_text(json.dumps(llm.outputs)+'\n')
                 row=dict(scenario=scenario,policy=policy,repetition=rep,metrics=metrics,**record)
                 runs.append(row);print(json.dumps({k:v for k,v in row.items() if k!='metrics'}),flush=True)
-        result=dict(runs=runs,budget=1024,graph=True,overlap=False,cache='naive',kv_pages=32768,
+        result=dict(runs=runs,policies=args.policies,decode_wait_ms=args.decode_wait_ms,
+                    prefill_wait_ms=args.prefill_wait_ms,budget=1024,graph=True,overlap=False,cache='naive',kv_pages=32768,
                     model=Path(args.model).name,gpu=torch.cuda.get_device_name(),torch=torch.__version__,
                     source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
                     source_dirty=bool(subprocess.check_output(['git','status','--porcelain'],text=True)),
