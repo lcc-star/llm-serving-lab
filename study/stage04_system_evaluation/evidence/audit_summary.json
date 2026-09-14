@@ -1,0 +1,21 @@
+{
+  "runs_verified": 357,
+  "pilot_runs": 12,
+  "matrix_runs": 270,
+  "sweep_runs": 40,
+  "confirmation_runs": 35,
+  "formal_repeats_per_configuration": 5,
+  "recorded_errors": 0,
+  "measurement_source_commit": "bfb319a20860047afedc090339e9b347f27c05e0",
+  "checks": [
+    "reconstructed workload SHA256",
+    "identical workload across compared policies and budgets",
+    "metrics recomputed from private events",
+    "output length and SHA256",
+    "five repeats per formal configuration"
+  ],
+  "output_comparisons": 235,
+  "compared_request_pairs": 7040,
+  "different_request_pairs": 3350,
+  "note": "Request pairs across configurations are not unique requests. Token equality is not guaranteed; semantic correctness and root cause remain stage 5 work."
+}

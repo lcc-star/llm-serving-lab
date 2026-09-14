@@ -1,0 +1,61 @@
+{
+  "dataset_file": "ShareGPT_V3_unfiltered_cleaned_split.json",
+  "dataset_sha256": "35f0e213ce091ed9b9af2a1f0755e9d39f9ccec34ab281cd4ca60d70f6479ba4",
+  "source_records": 94145,
+  "model": "Meta-Llama-3.1-8B-Instruct",
+  "chat_template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+  "tokenizer_files_sha256": {
+    "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+    "tokenizer_config.json": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424",
+    "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+  },
+  "skipped": {
+    "invalid_or_continuation_opening": 35147,
+    "duplicate_rendered_prompt": 12435,
+    "outside_32_4096_tokens": 115
+  },
+  "unique_prompt_lengths_before_filter": {
+    "count": 46563,
+    "min": 36,
+    "max": 161306,
+    "p50": 67,
+    "p95": 1317,
+    "p99": 2905
+  },
+  "split_rule": "SHA256(stage04-split-v1:original_conversation_id) modulo 5; tune=0, eval=1..4",
+  "pools": {
+    "tune": {
+      "buckets": {
+        "short": 8178,
+        "medium": 966,
+        "long": 240
+      },
+      "lengths": {
+        "count": 9384,
+        "min": 36,
+        "max": 4075,
+        "p50": 66,
+        "p95": 1393,
+        "p99": 2908
+      },
+      "unique_conversations": 8097
+    },
+    "eval": {
+      "buckets": {
+        "short": 32484,
+        "long": 787,
+        "medium": 3793
+      },
+      "lengths": {
+        "count": 37064,
+        "min": 36,
+        "max": 4096,
+        "p50": 67,
+        "p95": 1235,
+        "p99": 2680
+      },
+      "unique_conversations": 32037
+    }
+  },
+  "note": "Only intact opening user turns; exact rendered prompt deduplication; no semantic deduplication. Raw prompts and tokens stay local."
+}

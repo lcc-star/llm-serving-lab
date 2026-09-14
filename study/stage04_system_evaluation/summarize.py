@@ -58,6 +58,32 @@ def collect(root, pools):
     return records,groups
 
 
+
+def compare_outputs(root, records):
+    baselines={}
+    for r in records:
+        j=r['job']
+        key=(j['split'],j['scenario'],j['level'],j['repetition'],j['count'])
+        if j['policy']=='prefill_first' and j['budget']==1024:
+            baselines[key]=j['name']
+    comparisons=[]
+    for r in records:
+        j=r['job']
+        key=(j['split'],j['scenario'],j['level'],j['repetition'],j['count'])
+        if j['policy']=='prefill_first' or key not in baselines:
+            continue
+        a=json.loads((root/'private'/(baselines[key]+'_outputs.json')).read_text())
+        b=json.loads((root/'private'/(j['name']+'_outputs.json')).read_text())
+        assert a.keys()==b.keys()
+        first=[next((i for i,(x,y) in enumerate(zip(a[u],b[u])) if x!=y),None) for u in a]
+        changed=[i for i in first if i is not None]
+        comparisons.append(dict(scenario=j['scenario'],level=j['level'],split=j['split'],
+                                policy=j['policy'],budget=j['budget'],repetition=j['repetition'],
+                                requests=len(a),different_requests=len(changed),
+                                first_difference_index=({k:v for k,v in distribution(changed).items() if k!='values'} if changed else None)))
+    return comparisons
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--runs',type=Path,required=True)
@@ -69,6 +95,7 @@ def main():
     args.output.mkdir(parents=True,exist_ok=True)
     (args.output/'aggregate_runs.json').write_text(json.dumps(records,indent=2)+'\n')
     (args.output/'comparison.json').write_text(json.dumps(groups,indent=2)+'\n')
+    (args.output/'output_difference_counts.json').write_text(json.dumps(compare_outputs(args.runs,records),indent=2)+'\n')
     for name in ('calibration.json','budget_choices.json'):
         if (args.runs/name).exists():
             (args.output/name).write_text((args.runs/name).read_text())

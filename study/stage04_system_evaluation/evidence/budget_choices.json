@@ -1,0 +1,12 @@
+{
+  "mixed_steady": {
+    "budget": 1024,
+    "throughput_constraint_met": true,
+    "rule": "Minimize tune-set median short P99 ITL subject to throughput >= 95% of prefill_first/1024; fallback=1024."
+  },
+  "long_burst": {
+    "budget": 4096,
+    "throughput_constraint_met": true,
+    "rule": "Minimize tune-set median short P99 ITL subject to throughput >= 95% of prefill_first/1024; fallback=1024."
+  }
+}
