@@ -44,6 +44,8 @@ def main():
         if path.exists():
             saved = json.loads(path.read_text())
             assert saved['job'] == job and saved['status'] == 'ok'
+            rows = make_workload(pools[job['split']], job['scenario'], job['count'], job['rate'], job['seed'])
+            assert saved['workload_sha256'] == workload_hash(rows)
         else:
             pending.append(job)
     if not pending:
