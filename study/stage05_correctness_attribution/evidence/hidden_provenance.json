@@ -1,0 +1,22 @@
+{
+  "base_commit": "60ea0aa469e775db5ce619cd110a2147e9d2fb18",
+  "files_sha256": {
+    "probe_hidden.py": "a83374b78dd900571495bd0b5c6cd55d7fd44b8551f97d2a8ff7d4e4caa924e7",
+    "summarize_hidden.py": "54ea204fe5742f27298ec55b5abf2ad3c85c391c241687b1b20cc47bab0fd551"
+  },
+  "exploratory_runs": 4,
+  "confirmation_runs": 4,
+  "confirmation_repeats_per_schedule": 2,
+  "attention_backend": "fi",
+  "wrapper_backend": "fa2",
+  "graph": false,
+  "overlap": false,
+  "cache": "naive",
+  "page_size": 1,
+  "pages": 65536,
+  "prefill_budget": 1024,
+  "model": "Meta-Llama-3.1-8B-Instruct",
+  "target_input_tokens": 2132,
+  "target_output_index": 1,
+  "note": "Private request identity and tensors excluded."
+}

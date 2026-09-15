@@ -30,3 +30,21 @@ python -m unittest discover -s tests/stage05 -v
 ```bash
 python study/stage05_correctness_attribution/summarize.py --runs study/stage05_correctness_attribution/runs --output study/stage05_correctness_attribution/evidence
 ```
+
+## 实验 5.2：隐藏状态与 KV 定位
+
+已完成，见 [中文报告](HIDDEN_REPORT.md)。定点采集自然 eager 生成的隐藏状态及 KV，先检查探针不改变原输出，再按逻辑位置对齐。参考注意力使用 CPU float64；中间张量仍属本地敏感数据。
+
+```bash
+python study/stage05_correctness_attribution/probe_hidden.py \
+  --model /path/to/model \
+  --source study/stage04_system_evaluation/runs/main/private \
+  --pools study/stage04_system_evaluation/prepared/pools.json \
+  --previous study/stage05_correctness_attribution/runs \
+  --output study/stage05_correctness_attribution/runs/hidden_backend
+python study/stage05_correctness_attribution/summarize_hidden.py \
+  --runs study/stage05_correctness_attribution/runs/hidden_backend \
+  --output study/stage05_correctness_attribution/evidence/hidden_summary.json
+# 使用包含 matplotlib 的独立绘图环境：
+python study/stage05_correctness_attribution/plot_hidden.py study/stage05_correctness_attribution/evidence
+```
