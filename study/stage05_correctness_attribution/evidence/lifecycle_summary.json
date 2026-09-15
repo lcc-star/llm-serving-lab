@@ -1,0 +1,1808 @@
+{
+  "status": "passed",
+  "cpu_tests": [
+    {
+      "suite": "tests/stage01_measurement",
+      "passed": 4
+    },
+    {
+      "suite": "tests/stage02",
+      "passed": 2
+    },
+    {
+      "suite": "tests/stage03",
+      "passed": 24
+    },
+    {
+      "suite": "tests/stage04",
+      "passed": 11
+    },
+    {
+      "suite": "tests/stage05",
+      "passed": 14
+    },
+    {
+      "suite": "tests/core/test_cache_allocate.py",
+      "passed": 6
+    }
+  ],
+  "cpu_passed": 61,
+  "lifecycle": [
+    {
+      "status": "ok",
+      "cache": "naive",
+      "overlap": false,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "decode_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "wait_time",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        }
+      ],
+      "evicted_pages": 0,
+      "seconds": 112.21171728009358,
+      "soak_seconds": 6.135879084467888e-05,
+      "soak_waves": 0,
+      "soak_completed": 0,
+      "forced_sampling": true,
+      "resource_checks_after_each_wave": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      }
+    },
+    {
+      "status": "ok",
+      "cache": "naive",
+      "overlap": true,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "decode_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "wait_time",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        }
+      ],
+      "evicted_pages": 0,
+      "seconds": 110.7115947199054,
+      "soak_seconds": 2.5730114430189133e-05,
+      "soak_waves": 0,
+      "soak_completed": 0,
+      "forced_sampling": true,
+      "resource_checks_after_each_wave": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      }
+    },
+    {
+      "status": "ok",
+      "cache": "radix",
+      "overlap": false,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "decode_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "wait_time",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        }
+      ],
+      "evicted_pages": 512848,
+      "seconds": 112.77955486485735,
+      "soak_seconds": 3.2646115869283676e-05,
+      "soak_waves": 0,
+      "soak_completed": 0,
+      "forced_sampling": true,
+      "resource_checks_after_each_wave": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "python/minisgl/scheduler/cache.py": "b237bb612100a5201e92593b06da329ed4d5f3bd5aa84b492185b75e6e5b65c5",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      }
+    },
+    {
+      "status": "ok",
+      "cache": "radix",
+      "overlap": true,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "prefill_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "decode_first",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "decode_first",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        },
+        {
+          "policy": "wait_time",
+          "case": "eos_length",
+          "completed": 2,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "length_cap",
+          "completed": 1,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "chunk_complete",
+          "completed": 2,
+          "chunks": 8,
+          "prefill_batches_with_cached_tokens": 2
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_pending_chunk",
+          "completed": 1,
+          "chunks": 3,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_decode",
+          "completed": 1,
+          "chunks": 2,
+          "prefill_batches_with_cached_tokens": 0
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 1,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "prefix_eviction",
+          "completed": 1,
+          "chunks": 4,
+          "prefill_batches_with_cached_tokens": 1
+        },
+        {
+          "policy": "wait_time",
+          "case": "recycle",
+          "waves": 100,
+          "completed": 800
+        }
+      ],
+      "evicted_pages": 3775184,
+      "seconds": 708.8758033374324,
+      "soak_seconds": 600.1252722856589,
+      "soak_waves": 1218,
+      "soak_completed": 9744,
+      "forced_sampling": true,
+      "resource_checks_after_each_wave": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "python/minisgl/scheduler/cache.py": "b237bb612100a5201e92593b06da329ed4d5f3bd5aa84b492185b75e6e5b65c5",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      }
+    }
+  ],
+  "extra": [
+    {
+      "status": "ok",
+      "cache": "naive",
+      "overlap": false,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        }
+      ],
+      "forced_sampling": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "python/minisgl/scheduler/cache.py": "b237bb612100a5201e92593b06da329ed4d5f3bd5aa84b492185b75e6e5b65c5",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      },
+      "physical_gpu_index": 0
+    },
+    {
+      "status": "ok",
+      "cache": "naive",
+      "overlap": true,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        }
+      ],
+      "forced_sampling": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "python/minisgl/scheduler/cache.py": "b237bb612100a5201e92593b06da329ed4d5f3bd5aa84b492185b75e6e5b65c5",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      },
+      "physical_gpu_index": 0
+    },
+    {
+      "status": "ok",
+      "cache": "radix",
+      "overlap": false,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": true,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": true,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": true,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        }
+      ],
+      "forced_sampling": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "python/minisgl/scheduler/cache.py": "b237bb612100a5201e92593b06da329ed4d5f3bd5aa84b492185b75e6e5b65c5",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      },
+      "physical_gpu_index": 0
+    },
+    {
+      "status": "ok",
+      "cache": "radix",
+      "overlap": true,
+      "results": [
+        {
+          "policy": "prefill_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": true,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "prefill_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": true,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "decode_first",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "shared",
+          "completed": 2,
+          "shared_verified": true,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "cancel_inflight_decode",
+          "completed": 1,
+          "shared_verified": false,
+          "decode_launched": true
+        },
+        {
+          "policy": "wait_time",
+          "case": "late_eos",
+          "completed": 2,
+          "shared_verified": false,
+          "decode_launched": true
+        }
+      ],
+      "forced_sampling": true,
+      "provenance": {
+        "base_commit": "f01c95939c7af1eadffbd2df73b9be53a6c93847",
+        "source_sha256": {
+          "python/minisgl/scheduler/scheduler.py": "783f36a1b472a7337a1f09b59a0c9d24ff5132fb77f34ca623f615248b380f0b",
+          "python/minisgl/scheduler/cache.py": "b237bb612100a5201e92593b06da329ed4d5f3bd5aa84b492185b75e6e5b65c5",
+          "study/stage05_correctness_attribution/lifecycle.py": "13cf475cd61e25086fe57d2c83b0e1d80a9a5696c53c5402cfd6d89fcfcf38c0"
+        }
+      },
+      "physical_gpu_index": 0
+    }
+  ],
+  "post_fix_fixed_trace": [
+    {
+      "case": "baseline",
+      "repeat": 0,
+      "graph": 8,
+      "batches": 1190,
+      "identical_to_recorded": true
+    },
+    {
+      "case": "baseline",
+      "repeat": 1,
+      "graph": 8,
+      "batches": 1190,
+      "identical_to_recorded": true
+    },
+    {
+      "case": "alternative",
+      "repeat": 0,
+      "graph": 8,
+      "batches": 1189,
+      "identical_to_recorded": true
+    },
+    {
+      "case": "alternative",
+      "repeat": 1,
+      "graph": 8,
+      "batches": 1189,
+      "identical_to_recorded": true
+    }
+  ],
+  "named_lifecycle_cases": 180,
+  "extra_cases": 36,
+  "recycle_waves": 1200,
+  "recycle_completed": 9600,
+  "soak_completed": 9744,
+  "note": "Forced sampler validates lifecycle, not model semantics. Finite ten-minute soak is not a proof of unbounded leak freedom. Evicted-page counters include explicit between-case cache clearing."
+}
