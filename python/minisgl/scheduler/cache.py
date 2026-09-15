@@ -70,8 +70,16 @@ class CacheManager:
         cached_len, new_handle = self.prefix_cache.insert_prefix(insert_ids, page_indices)
         # unlock until all operations on handle is done
         self.unlock(old_handle)
-        # this part is already in the prefix cache, free it
-        self._free(page_indices[old_handle.cached_len : cached_len])
+        # Running requests must use the canonical prefix before duplicates are reused.
+        duplicates = page_indices[old_handle.cached_len : cached_len]
+        if not finished and cached_len > old_handle.cached_len:
+            # lazy_free_region retains tensors; preserve the original page IDs.
+            duplicates = duplicates.clone()
+            canonical = new_handle.get_matched_indices()
+            page_indices[old_handle.cached_len : cached_len].copy_(
+                canonical[old_handle.cached_len : cached_len]
+            )
+        self._free(duplicates)
         if finished:  # this tail part should be freed
             self._free(page_indices[new_handle.cached_len :])
         else:  # keep the tail part, update the handle

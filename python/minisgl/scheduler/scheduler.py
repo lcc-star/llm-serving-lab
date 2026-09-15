@@ -75,7 +75,8 @@ class Scheduler(SchedulerIOMixin):
         )
 
         # some alias for easy access
-        self.finished_reqs: Set[Req] = set()
+        self._inflight_reqs: dict[Req, int] = {}
+        self._terminal_reqs: Set[Req] = set()
         self.tokenizer = load_tokenizer(config.model_path)
         self.eos_token_id = self.tokenizer.eos_token_id
         self.token_pool = self.table_manager.token_pool
@@ -152,28 +153,33 @@ class Scheduler(SchedulerIOMixin):
         batch, (_, next_tokens_cpu, copy_done) = last_data[0].batch, last_data[1]
         copy_done.synchronize()
         reply: List[DetokenizeMsg] = []
-        new_finished_reqs: Set[Req] = set()
         with self.cache_manager.lazy_free_region():
             for i, req in enumerate(batch.reqs):
+                remaining = self._inflight_reqs[req] - 1
+                if remaining:
+                    self._inflight_reqs[req] = remaining
+                else:
+                    del self._inflight_reqs[req]
+                if req in self._terminal_reqs:
+                    self._release_terminal_req(req)
+                    continue
                 if isinstance(req, ChunkedReq):
                     continue
                 next_token = next_tokens_cpu[i]
                 req.append_host(next_token.unsqueeze(0))
                 next_token = int(next_token.item())
-                finished = not req.can_decode
+                finished = len(req.input_ids) >= req.max_device_len
                 if not req.sampling_params.ignore_eos:
                     finished |= next_token == self.eos_token_id
                 reply.append(DetokenizeMsg(uid=req.uid, next_token=next_token, finished=finished))
 
-                # NOTE: overlap scheduling may make the request freed twice, skip second free
-                if finished and req not in self.finished_reqs:
+                if finished:
                     self.decode_manager.remove_req(req)
-                    self._free_req_resources(req)
-                    new_finished_reqs.add(req)
+                    self._terminal_reqs.add(req)
+                    self._release_terminal_req(req)
                 elif batch.is_prefill:  # for prefill, non-chunk req, cache the prefix
                     self.cache_manager.cache_req(req, finished=False)
 
-        self.finished_reqs = new_finished_reqs
         self.batch_policy.observe(self.prefill_manager, self.decode_manager)
         self.send_result(reply)
 
@@ -203,14 +209,29 @@ class Scheduler(SchedulerIOMixin):
             logger.debug_rank0("Aborting request %d", msg.uid)
             req_to_free = self.prefill_manager.abort_req(msg.uid)
             req_to_free = req_to_free or self.decode_manager.abort_req(msg.uid)
+            if req_to_free is None:
+                # A final device step may already have left the decode manager.
+                req_to_free = next((r for r in self._inflight_reqs if r.uid == msg.uid), None)
             if req_to_free is not None:
-                self._free_req_resources(req_to_free)
+                self._terminal_reqs.add(req_to_free)
+                self._release_terminal_req(req_to_free)
             self.batch_policy.observe(self.prefill_manager, self.decode_manager)
         else:
             logger.error(f"Unknown message type: {type(msg)}")
             raise NotImplementedError
 
+    def _release_terminal_req(self, req: Req) -> None:
+        if req in self._inflight_reqs:
+            return
+        self._terminal_reqs.remove(req)
+        self._free_req_resources(req)
+
     def _free_req_resources(self, req: Req) -> None:
+        # The result-copy event precedes the token-pool write in _forward.
+        # Order reuse after all queued engine writes without a host/device-wide sync.
+        current_stream = torch.cuda.current_stream()
+        if current_stream != self.engine.stream:
+            current_stream.wait_stream(self.engine.stream)
         self.table_manager.free(req.table_idx)
         self.cache_manager.cache_req(req, finished=True)
 
@@ -243,6 +264,8 @@ class Scheduler(SchedulerIOMixin):
     def _forward(self, forward_input: ForwardInput) -> ForwardOutput:
         batch, sample_args, input_mapping, output_mapping = forward_input
         batch.input_ids = self.token_pool[input_mapping]
+        for req in batch.reqs:
+            self._inflight_reqs[req] = self._inflight_reqs.get(req, 0) + 1
         forward_output = self.engine.forward_batch(batch, sample_args)
         self.token_pool[output_mapping] = forward_output.next_tokens_gpu
         self.decode_manager.filter_reqs(forward_input.batch.reqs)
