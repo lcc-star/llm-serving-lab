@@ -4,7 +4,8 @@
 
 ## 标准版：三条要点
 
-**基于 Mini-SGLang 的 LLM 推理公平调度优化与验证**  
+**基于 Mini-SGLang 的 LLM 推理公平调度优化与验证**
+
 技术：Python、PyTorch、CUDA Graph、KV Cache、Nsight Systems
 
 - 针对长 prefill 干扰 decode 的问题，实现带等待阈值的批次调度策略，保留 prefill token 预算，支持双阈值冲突决策、资源不足回退及调度日志，对比 prefill 优先与 decode 优先策略。
