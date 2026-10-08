@@ -1,4 +1,4 @@
-"""Stage-six entry point; reuse experiments and keep new raw artifacts local."""
+"""Reproduction entry point; reuse experiments and keep new raw artifacts local."""
 import argparse
 from datetime import datetime, timezone
 import json
@@ -45,7 +45,7 @@ def main():
         evidence()
         return
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
-    out = STUDY / 'stage06_interview/runs' / (args.mode + '_' + stamp)
+    out = STUDY / 'reproduction/runs' / (args.mode + '_' + stamp)
     python = sys.executable
     commands = []
     if args.mode == 'cpu':

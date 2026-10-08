@@ -8,8 +8,7 @@
 | `stage03_scheduling/` | 等待阈值公平调度、优先级对照、决策日志与生命周期验证 |
 | `stage04_system_evaluation/` | ShareGPT 数据准备、六类负载、三档压力与独立预算确认 |
 | `stage05_correctness_attribution/` | 已完成：输出分歧定位、生命周期修复与验证、Nsight 性能归因 |
-
-| `stage06_interview/` | 项目报告、贡献证据、简历与面试讲解、统一复现入口 |
+| `reproduction/` | 公开证据核验、CPU 测试与实验复现入口 |
 
 每阶段包含自己的入口、说明、报告及证据。阶段二复用阶段一的测量工具，避免重复实现指标。后续阶段按相同命名方式添加。`runs/` 保存本地生成产物，审核选定证据后纳入版本控制。
 
